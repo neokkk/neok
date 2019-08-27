@@ -1,0 +1,31 @@
+$gray: #474747;
+$orange: #ff7a0f;
+
+.header {
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 50px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+
+    &-logo {
+        color: $gray;
+        font-size: 25px;
+        font-weight: 1000;
+        text-decoration: none;
+        display: inline;
+    }
+
+    &-link {
+        
+    }
+
+    &-copyright {
+        color: $orange;
+        font-size: 10px;
+        opacity: 0.5;
+    }
+}

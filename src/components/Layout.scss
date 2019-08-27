@@ -1,0 +1,14 @@
+.layout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-content {
+        width: 70%;
+        padding: 50px 80px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+    }
+}

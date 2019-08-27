@@ -1,0 +1,28 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+@import './Header.scss';
+
+.item {
+    padding: 50px 60px;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: rgba(226, 226, 226, 0.486);
+    }
+
+    &-name {
+        color: $orange;
+    }
+
+    &-period {
+        opacity: 0.3;
+        margin: 10px 0;
+    }
+
+    &-info {
+        color: $gray;
+        font-family: 'NanumSquare', sans-serif;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,22 @@
+@import 'Header.scss';
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    li {
+        color: $gray;
+        margin-right: 10px;
+        cursor: pointer;
+        
+        &:hover {
+            color: $orange;
+        }
+
+        .active {
+            color: $orange;
+        }
+    }
+}
