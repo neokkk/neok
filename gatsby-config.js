@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
-    name: `Hello Typescript World!`,
-    tagline: `Gatsby + SASS + Typescript = 💪`
+    rights: '©2019 neok All rights reserved.',
   },  
   plugins: [
     `gatsby-plugin-sass`,
