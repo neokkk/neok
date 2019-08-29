@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import './Menu.scss';
 
-const menus = ['career', 'project'];
+const menus = ['profile', 'project', 'post'];
 
 const Menu = () => {
+    const pathname = window.location.pathname.slice(1);
+
     return (
         <ul className='menu'>
             {menus.map(menu => 
-                <li>{menu}</li>    
+                <Link to={menu}>
+                    <li className={menu === pathname ? 'menu-li clicked' : 'menu-li'}>{menu}</li>
+                </Link>    
             )}
         </ul>
     );

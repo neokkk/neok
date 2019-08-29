@@ -20,7 +20,25 @@ $orange: #ff7a0f;
     }
 
     &-link {
-        
+        a {
+            margin: 0;
+            padding: 0;
+
+            &:first-child {  
+                img {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 5px;
+                }
+            }
+
+            &:last-child {
+                img {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
     }
 
     &-copyright {

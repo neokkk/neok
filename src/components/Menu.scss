@@ -6,17 +6,22 @@
     justify-content: center;
     margin-bottom: 50px;
 
-    li {
+    a {
+        text-decoration: none;
+    }
+
+    &-li {
         color: $gray;
-        margin-right: 10px;
+        margin-right: 20px;
         cursor: pointer;
         
         &:hover {
             color: $orange;
         }
 
-        .active {
-            color: $orange;
-        }
+    }
+
+    .clicked {
+        color: $orange;
     }
 }

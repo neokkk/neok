@@ -5,11 +5,11 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 
 import './Tag.scss';
 
-const Tag = () => {
+const Tag = ({ name }) => {
     return (
         <div className='tag'>
             <FontAwesomeIcon icon={faTag} />
-            <span> JavaScript</span>
+            <span> {name}</span>
         </div>
     );
 }

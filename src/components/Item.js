@@ -4,15 +4,16 @@ import Tag from './Tag';
 
 import './Item.scss';
 
-const Item = () => {
+const Item = ({ info }) => {
     return (
-        <div className='item'>
-            <h1 className='item-name'>Project01</h1>
-            <p className='item-period'>2019.05 ~ 2019.07</p>
-            <div className='item-info'>회원 기반 SNS 웹 어플리케이션입니다.</div>
-            <Tag />
-            <Tag />
-        </div>
+        <a href={info.link} className='item'>
+            <span className='item-title'>{info.title}</span>
+            <span className='item-period'>{info.period}</span>
+            <div className='item-info'>{info.content}</div>
+            {info.tags.map(tag => 
+                <Tag name={tag} />    
+            )}
+        </a>
     );
 }
 
