@@ -1,34 +1,45 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout';
 
-import Layout from '../components/Layout';
-
-import './index.scss';
-
-const PostPage = ({ data }) => {
-    const post = data.markdownRemark;
-
-    return (
-        <div className='index'>
-            <Layout>
-                <div>
-                    <h1>{post.frontmatter.title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                </div>
-            </Layout>
-        </div>
-    );
-}
-
-export default PostPage;
+export default ({ data }) => {
+  return (
+    <Layout>
+      <div>
+        <h1>Amazing Pandas Eating Things</h1>
+        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div key={node.id}>
+            <Link to={node.fields.slug}>
+              <h3>
+                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
+              </h3>
+              <p>{node.excerpt}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </Layout>
+  );
+};
 
 export const query = graphql`
-  query($slug) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-        html
-        frontmatter {
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
             title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt
         }
+      }
     }
   }
 `;
