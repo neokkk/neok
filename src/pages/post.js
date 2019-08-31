@@ -1,14 +1,20 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Item from '../components/Item'
 
 import './index.scss';
 
-const PostPage = () => {
+const PostPage = ({ data }) => {
+    const post = data.markdownRemark;
+
     return (
         <div className='index'>
             <Layout>
+                <div>
+                    <h1>{post.frontmatter.title}</h1>
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                </div>
             </Layout>
         </div>
     );
@@ -16,20 +22,13 @@ const PostPage = () => {
 
 export default PostPage;
 
-// export const query = graphql`
-//   query {
-//     allMarkdownRemark {
-//       totalCount
-//       edges {
-//         node {
-//           id
-//           frontmatter {
-//             title
-//             date(formatString: "DD MMMM, YYYY")
-//           }
-//           excerpt
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query($slug) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+        html
+        frontmatter {
+            title
+        }
+    }
+  }
+`;
