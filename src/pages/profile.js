@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import Item from '../components/Item'
 
 import './index.scss';
 
-const CareerPage = () => {
+const ProfilePage = () => {
     return (
         <div className='index'>
             <Layout>
@@ -14,4 +13,4 @@ const CareerPage = () => {
     );
 }
 
-export default CareerPage;
+export default ProfilePage;

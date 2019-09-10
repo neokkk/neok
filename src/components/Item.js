@@ -6,7 +6,7 @@ import './Item.scss';
 
 const Item = ({ info }) => {
     return (
-        <a href={info.link} className='item'>
+        <a href={info.link} target='_blank' className='item'>
             <span className='item-title'>{info.title}</span>
             <span className='item-period'>{info.period}</span>
             <div className='item-info'>{info.content}</div>

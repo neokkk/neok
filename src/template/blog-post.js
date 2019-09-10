@@ -1,9 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+
+import Layout from "../components/layout";
+
+import '../index.scss';
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
+
   return (
     <Layout>
       <div>

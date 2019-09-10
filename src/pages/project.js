@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Item from '../components/Item'
 
 import './index.scss';
-import { projects } from './project/i';
+import { projects } from '../constant/projects';
 
 const ProjectPage = () => {
     return (
