@@ -18,7 +18,9 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <a href='/' className='header-logo'>neok</a>
+            <span>
+                <a href='/' className='header-logo'>neok</a>
+            </span>
             <div>
                 <div className='header-link'>
                     <a href='https://github.com/neokkk'><img src='images/github.png' /></a>

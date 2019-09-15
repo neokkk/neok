@@ -6,8 +6,12 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 import './Tag.scss';
 
 const Tag = ({ name }) => {
+    const handleClick = e => {
+        e.preventDefault();
+    }
+
     return (
-        <div className='tag'>
+        <div className='tag' onClick={handleClick}>
             <FontAwesomeIcon icon={faTag} />
             <span> {name}</span>
         </div>

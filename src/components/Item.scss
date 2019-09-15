@@ -10,6 +10,7 @@
     &:hover {
         border-radius: 15px;
         background-color: rgba(226, 226, 226, 0.3);
+        transition: all 0.2s ease-in-out; 
     }
 
     &-title {
