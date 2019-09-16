@@ -10,8 +10,8 @@ const ProjectPage = () => {
     return (
         <div className='index'>
             <Layout>
-                {projects.map(p => 
-                    <Item info={p} />
+                {projects.reverse().map((p, index) => 
+                    <Item info={p} index={index + 1} />
                 )}
             </Layout>
         </div>
