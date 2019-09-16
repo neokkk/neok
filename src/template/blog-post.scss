@@ -1,0 +1,76 @@
+@import '../pages/index.scss';
+@import '../components/Header.scss';
+
+@mixin hoverTransition {
+    a {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}
+
+*, html { margin: 0; padding: 0 }
+
+.blog-post {
+    @include hoverTransition();
+
+    color: $gray;
+    width: 60%;
+    min-width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-back {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+
+        &:visited {
+            color: $gray;
+        }
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &-title {
+        color: $orange;
+        font-size: 35px;
+        font-family: 'Spoqa Han Sans', sans-serif;
+        margin: 20px 0 15px 0;
+    }
+
+    &-date {
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    &-html {
+        font-family: 'Spoqa Han Sans', sans-serif;
+        font-size: 1rem;
+        width: 100%;
+        margin: 50px 0;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a {
+            color: $orange;
+            text-decoration: none;
+            
+            &:hover {
+                color: white;
+                background-color: $orange;
+            }
+        }
+    }
+}

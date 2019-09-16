@@ -1,15 +1,10 @@
 @import './Header.scss';
 
-@keyframes hover {
-    from {
-
-    }
-}
-
 .posts {
-    margin: 5px 0;
+    margin: 3px 0;
 
     a {
+        color: $gray;
         font-size: 25px;
         text-decoration: none;
         position: relative;
@@ -24,7 +19,7 @@
             height: 10px;
             transition: all 0.4s ease-in-out;
             opacity: 0;
-            background-color: #fde872;
+            background-color: $yellow;
             z-index: -1;
         }
         
@@ -41,7 +36,7 @@
 
         span {
             font-size: 25px;
-            font-family: 'NanumSquare', sans-serif;
+            font-family: 'Spoqa Han Sans', sans-serif;
 
             &:last-child {
                 font-size: 15px;

@@ -14,9 +14,11 @@
         color: $gray;
         margin-right: 20px;
         cursor: pointer;
+        transition: all 0.2s ease-in-out;
         
         &:hover {
             color: $orange;
+            transition: all 0.2s ease-in-out;
         }
 
     }

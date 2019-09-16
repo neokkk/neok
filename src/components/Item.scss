@@ -1,4 +1,3 @@
-@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 @import './Header.scss';
 
 .item {
@@ -33,8 +32,8 @@
 
     &-info {
         color: $gray;
-        font-family: 'NanumSquare', sans-serif;
+        font-family: 'Spoqa Han Sans', sans-serif;
         font-size: 25px;
-        margin: 20px 10px 10px 10px;
+        margin: 15px 10px 10px 10px;
     }
 }

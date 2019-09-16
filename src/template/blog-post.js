@@ -1,20 +1,18 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
-
-import '../index.scss';
+import './blog-post.scss';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className='blog-post'>
+        <a className='blog-post-back' href='/post'>category</a>
+        <h1 className='blog-post-title'>{post.frontmatter.title}</h1>
+        <p className='blog-post-date'>{post.frontmatter.date}</p>
+        <div className='blog-post-html' dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-    </Layout>
   )
 }
 
@@ -24,6 +22,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "DD MMM, YYYY")
       }
     }
   }

@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+
+@import '../components/Header.scss';
 
 * , html { margin: 0; padding: 0; }
 
 .index {
+  color: $gray;
   font-family: 'Montserrat', sans-serif;
   width: 80%;
   min-width: 1200px;
@@ -12,6 +16,28 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
+  &-child {
+    height: 100%;
+    font-family: 'Spoqa Han Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+
+    // span {
+    //   &:after {
+    //     content: '';
+    //     position: absolute;
+    //     bottom: 2px;
+    //     left: 0;
+    //     width: 42px;
+    //     height: 10px;
+    //     background-color: $yellow;
+    //   }
+    // }
+  }
 
   .post {
     padding: 0 50px;

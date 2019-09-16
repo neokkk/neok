@@ -23,7 +23,7 @@ const Header = () => {
             </span>
             <div>
                 <div className='header-link'>
-                    <a href='https://github.com/neokkk'><img src='images/github.png' /></a>
+                    <a href='https://github.com/neokkk' target='_blank'><img src='images/github.png' /></a>
                     <a href='mailto:seven3126@gmail.com'><img src='images/email.png' /></a>
                 </div>
                 <span className='header-copyright'>{data.site.siteMetadata.rights}</span>

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import './Menu.scss';
 
-const menus = ['profile', 'project', 'post'];
+const menus = ['project', 'post'];
 
 const Menu = () => {
     const pathname = window.location.pathname.slice(1);
