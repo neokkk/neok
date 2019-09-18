@@ -8,12 +8,14 @@
         height: 500px;
         padding: 50px 80px;
         box-sizing: border-box;
-        overflow-y: scroll;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
+        overflow: -moz-scrollbars-none; // firefox
+        -ms-overflow-style: none; // IE +10
 
-        &::-webkit-scrollbar {
-            display: hidden;
+        &::-webkit-scrollbar { // chrome, safari, opera
+            width: 0;
         }
     }
 }

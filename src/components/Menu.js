@@ -7,6 +7,7 @@ const menus = ['project', 'post'];
 
 const Menu = () => {
     let pathname = '';
+    
     if (typeof window !== `undefined`) {
         pathname = window.location.pathname.slice(1);
     }
