@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Menu from './Menu';
-import '../pages/index.scss';
 
+import '../../pages/index.scss';
 import './Layout.scss';
 
 const Layout = ({ children }) => {
