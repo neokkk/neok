@@ -6,7 +6,10 @@ import './Menu.scss';
 const menus = ['project', 'post'];
 
 const Menu = () => {
-    // const pathname = window.location.pathname.slice(1);
+    let pathname = '';
+    if (typeof window !== `undefined`) {
+        pathname = window.location.pathname.slice(1);
+    }
 
     return (
         <ul className='menu'>
