@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-// import './index.scss';
+import './index.scss';
 
 const IndexPage = () => {
     return (
