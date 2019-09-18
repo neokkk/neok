@@ -9,7 +9,7 @@ const IndexPage = () => {
         <div className='index'>
             <Layout>
                 <div className='index-child'>
-                    <p>JavaScript 개발자 <span>neo</span>의 블로그입니다.</p>
+                    <p>JavaScript 개발자 neo의 블로그입니다.</p>
                 </div>
             </Layout>
         </div>
