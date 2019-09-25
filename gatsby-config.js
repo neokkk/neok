@@ -4,7 +4,7 @@ module.exports = {
     description: 'JavaScript Developer neok\'s dev blog.',
     keywords: '자바스크립트, JavaScript, React, Node.js, devlog, algorithm',
     url: 'http://neok.netlify.com/post',
-    image: '/static/images/ball.png',
+    image: 'images/ball.png',
     rights: '©2019 neok All rights reserved.',
   },  
   plugins: [
