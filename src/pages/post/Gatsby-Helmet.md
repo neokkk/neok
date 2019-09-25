@@ -153,7 +153,7 @@ gatsby에서 제공하는 기본 틀은 아래와 같다.
 <br>
 여기서 필요한 내용들을 추가하거나 빼면 된다.
 <br>
-meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie031/html-seo-web-coding")를 참고하였다.
+meta 데이터 관련 내용은 다음 [링크](https://steemit.com/kr/@reggie031/html-seo-web-coding)를 참고하였다.
 
 <br>
 
@@ -171,4 +171,4 @@ meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie0
 
 <br>
 <br>
-+ 코드 폰트들이 왜저런지...? 빠른 시일 내에 수정해야겠다.
++ 코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다.
