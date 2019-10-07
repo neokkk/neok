@@ -27,11 +27,14 @@
     justify-content: center;
     align-items: center;
 
-    code {
-        font-size: 13px;
-        font-family: 'Source Code Pro', monospace;
-        color: $gray;
+    pre {
         background-color: #e4e4e4;
+
+        code {
+            font-size: 13px;
+            font-family: 'Source Code Pro', monospace;
+            color: $gray;
+        }
     }
 
     &-back {
