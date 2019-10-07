@@ -25,7 +25,7 @@ const Header = () => {
                 <div className='header-link'>
                     <a href='https://github.com/neokkk' target='_blank'><img src='/images/github.png' /></a>
                     <a href='mailto:seven3126@gmail.com'><img src='/images/email.png' /></a>
-                    <a href='https://www.linkedin.com/in/nakyeong-kim-b8ab8b179/'><img src='/images/linkedin.png' /></a>
+                    <a href='https://www.linkedin.com/in/nakyeong-kim-b8ab8b179/' target='_blank'><img src='/images/linkedin.png' /></a>
                 </div>
                 <span className='header-copyright'>{data.site.siteMetadata.rights}</span>
             </div>
