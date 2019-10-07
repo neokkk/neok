@@ -152,7 +152,6 @@ const query = graphql`
 meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie031/html-seo-web-coding")를 참고하였다.
 
 <br>
-<br>
 
 ## ○ 참고문서
 
