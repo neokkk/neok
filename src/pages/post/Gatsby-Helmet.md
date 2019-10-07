@@ -16,7 +16,7 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 <br>
 
 ````
-    npm install --save gatsby-plugin-react-helmet react-helmet
+npm install --save gatsby-plugin-react-helmet react-helmet
 ````
 
 <br>
@@ -25,9 +25,9 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 <br>
 
 ````
-    {
-        plugins: [`gatsby-plugin-react-helmet`]
-    }
+{
+    plugins: [`gatsby-plugin-react-helmet`]
+}
 ````
 
 <br>
@@ -36,21 +36,20 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 <br>
 
 ````
-    import React from "react"
-    import { Helmet } from "react-helmet"
+import React from "react"
+import { Helmet } from "react-helmet"
 
-    const Application = () => {
-        return (
-            <div className="application">
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>My Title</title>
-                    <link rel="canonical" href="http://mysite.com/example" />
-                </Helmet>
-            </div>
-        );
-    }
-
+const Application = () => {
+    return (
+        <div className="application">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>My Title</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+        </div>
+    );
+}
 ````
 
 <br>
@@ -63,18 +62,18 @@ gatsby-config.js에 홈페이지 정보를 저장하고 필요할 때 graphql을
 <br>
 
 ````
-    // gatsby-config.js
+// gatsby-config.js
 
-    module.exports = {
-        siteMetadata: {
-            title: "Severus Snape",
-            titleTemplate: "%s · The Real Hero",
-            description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-            url: "https://www.doe.com", // No trailing slash allowed!
-            image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
-            twitterUsername: "@occlumency",
-        },
-    }
+module.exports = {
+    siteMetadata: {
+        title: "Severus Snape",
+        titleTemplate: "%s · The Real Hero",
+        description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+        url: "https://www.doe.com", // No trailing slash allowed!
+        image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+        twitterUsername: "@occlumency",
+    },
+}
 ````
 <br>
 SEO 컴포넌트를 만들어주자.
@@ -86,63 +85,63 @@ gatsby에서 제공하는 기본 틀은 아래와 같다.
 <br>
 
 ````
-    import React from "react"
-    import { Helmet } from "react-helmet"
-    import { StaticQuery, graphql } from "gatsby"
+import React from "react"
+import { Helmet } from "react-helmet"
+import { StaticQuery, graphql } from "gatsby"
 
-    const SEO = ({ title, description, image, pathname, article }) => (
-        <StaticQuery query={query} render={({
-            site: {
-                siteMetadata: {
-                    defaultTitle,
-                    titleTemplate,
-                    defaultDescription,
-                    siteUrl,
-                    defaultImage,
-                }
-            }
-        }) => {
-            const seo = {
-                title: title || defaultTitle,
-                description: description || defaultDescription,
-                image: `${siteUrl}${image || defaultImage}`,
-                url: `${siteUrl}${pathname || "/"}`,
-            }
-
-            return (
-                <>
-                    <Helmet title={seo.title} titleTemplate={titleTemplate}>
-                        <meta name="description" content={seo.description} />
-                        <meta name="image" content={seo.image} />
-                        {seo.url && <meta property="og:url" content={seo.url} />}
-                        {(article ? true : null) && (
-                            <meta property="og:type" content="article" />
-                        )}
-                        {seo.title && <meta property="og:title" content={seo.title} />}
-                        {seo.description && (
-                            <meta property="og:description" content={seo.description} />
-                        )}
-                    </Helmet>
-                </>
-            )
-        }} />
-    );
-
-    export default SEO
-
-    const query = graphql`
-        query SEO {
-            site {
-                siteMetadata {
-                    defaultTitle: title
-                    titleTemplate
-                    defaultDescription: description
-                    siteUrl: url
-                    defaultImage: image
-                }
+const SEO = ({ title, description, image, pathname, article }) => (
+    <StaticQuery query={query} render={({
+        site: {
+            siteMetadata: {
+                defaultTitle,
+                titleTemplate,
+                defaultDescription,
+                siteUrl,
+                defaultImage,
             }
         }
-    `
+    }) => {
+        const seo = {
+            title: title || defaultTitle,
+            description: description || defaultDescription,
+            image: `${siteUrl}${image || defaultImage}`,
+            url: `${siteUrl}${pathname || "/"}`,
+        }
+
+        return (
+            <>
+                <Helmet title={seo.title} titleTemplate={titleTemplate}>
+                    <meta name="description" content={seo.description} />
+                    <meta name="image" content={seo.image} />
+                    {seo.url && <meta property="og:url" content={seo.url} />}
+                    {(article ? true : null) && (
+                        <meta property="og:type" content="article" />
+                    )}
+                    {seo.title && <meta property="og:title" content={seo.title} />}
+                    {seo.description && (
+                        <meta property="og:description" content={seo.description} />
+                    )}
+                </Helmet>
+            </>
+        )
+    }} />
+);
+
+export default SEO
+
+const query = graphql`
+    query SEO {
+        site {
+            siteMetadata {
+                defaultTitle: title
+                titleTemplate
+                defaultDescription: description
+                siteUrl: url
+                defaultImage: image
+            }
+        }
+    }
+`
 ````
 
 <br>
@@ -165,4 +164,5 @@ meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie0
 
 <br>
 <br>
-~~ + 코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다. ~~
+
+~~코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다.~~
