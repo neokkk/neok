@@ -27,6 +27,13 @@
     justify-content: center;
     align-items: center;
 
+    code {
+        font-size: 13px;
+        font-family: 'Source Code Pro', monospace;
+        color: $gray;
+        background-color: #e4e4e4;
+    }
+
     &-back {
         font-family: 'Montserrat', sans-serif;
         text-decoration: none;
