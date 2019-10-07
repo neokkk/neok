@@ -32,16 +32,16 @@
         background-color: #f8f8f8;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         padding: 20px;
         box-sizing: border-box;
         overflow-x: scroll;
+        text-align: left;
 
         code {
             font-size: 13px;
             font-family: 'Source Code Pro', monospace;
             color: $gray;
-            text-align: left;
         }
     }
 
