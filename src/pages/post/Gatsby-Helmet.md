@@ -20,7 +20,6 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 ````
 
 <br>
-<br>
 그리고 gatsby-config.js 파일에 해당 플러그인을 추가해주자.
 <br>
 <br>
@@ -31,7 +30,6 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
     }
 ````
 
-<br>
 <br>
 기본적으로 helmet을 사용하는 방법은 다음과 같다.
 <br>
@@ -56,7 +54,6 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 ````
 
 <br>
-<br>
 helmet 태그 내부에 작성하고 싶은 head 내용을 작성하면 된다. 
 <br>
 위와 같이 따로 작성해도 되지만, 컴포넌트로 구성해 재사용하는게 좋을 것 같다. 
@@ -79,7 +76,6 @@ gatsby-config.js에 홈페이지 정보를 저장하고 필요할 때 graphql을
         },
     }
 ````
-<br>
 <br>
 SEO 컴포넌트를 만들어주자.
 <br>
@@ -169,4 +165,4 @@ meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie0
 
 <br>
 <br>
-~~+ 코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다.~~
+~~ + 코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다. ~~
