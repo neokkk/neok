@@ -12,7 +12,7 @@ export default ({ data }) => {
         <SEO title={post.frontmatter.title}
              description={post.exceprt}
              keywords={post.frontmatter.title}
-             pathname={post.fields.slug.replace('/', '')}
+             pathname={post.fields.slug}
               />
         <a className='blog-post-back' href='/post'>category</a>
         <h1 className='blog-post-title'>{post.frontmatter.title}</h1>
