@@ -10,7 +10,7 @@ export default ({ data }) => {
   return (
       <div className='blog-post'>
         <SEO title={post.frontmatter.title}
-             description={post.exceprt}
+             description={post.excerpt}
              keywords={post.frontmatter.title}
              pathname={post.fields.slug}
         />
