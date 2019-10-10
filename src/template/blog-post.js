@@ -9,7 +9,11 @@ export default ({ data }) => {
 
   return (
       <div className='blog-post'>
-        <SEO />
+        <SEO title={post.frontmatter.title}
+             description={post.exceprt}
+             keywords={post.frontmatter.title}
+             pathname={post.fields.slug.replace('/', '')}
+              />
         <a className='blog-post-back' href='/post'>category</a>
         <h1 className='blog-post-title'>{post.frontmatter.title}</h1>
         <p className='blog-post-date'>{post.frontmatter.date}</p>
@@ -21,7 +25,11 @@ export default ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      excerpt
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "DD MMM, YYYY")
