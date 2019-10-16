@@ -4,7 +4,7 @@
 
 @import '../components/Header.scss';
 
-* , html { margin: 0; padding: 0; }
+*, html { margin: 0; padding: 0; }
 
 .index {
   color: $gray;
@@ -31,5 +31,20 @@
 
   .post {
     padding: 0 50px;
+  }
+
+  /* media query */
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    &-child {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
   }
 }

@@ -18,4 +18,16 @@
             width: 0;
         }
     }
+
+    /* @media (max-width: 1000px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    } */
 }
