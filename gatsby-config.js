@@ -6,6 +6,7 @@ module.exports = {
     url: 'http://neok.netlify.com/post',
     image: '/images/ball.png',
     rights: '©2019 neok All rights reserved.',
+    twitterUsername: ''
   },  
   plugins: [
     {
