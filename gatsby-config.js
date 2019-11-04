@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/post/sitemap.xml`,
+        output: `/sitemap.xml`,
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
@@ -103,7 +103,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/post/rss.xml",
+            output: "/rss.xml",
             title: "Your Site's RSS Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of

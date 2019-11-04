@@ -173,7 +173,10 @@ meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie0
 <https://www.gatsbyjs.org/docs/add-seo-component/>
 
 
+<https://imweb.me/faq?mode=view&category=29&category2=35&idx=15573/>
+
 <br>
 <br>
 
 ~~코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다.~~
+
