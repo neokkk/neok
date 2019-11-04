@@ -34,17 +34,17 @@
   }
 
   /* media query */
-  @media (max-width: 1000px) {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+  // @media (max-width: 1000px) {
+  //   width: 100%;
+  //   height: 100vh;
+  //   display: flex;
+  //   justify-content: center;
 
-    &-child {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  }
+  //   &-child {
+  //     width: 100%;
+  //     display: flex;
+  //     justify-content: flex-start;
+  //     align-items: center;
+  //   }
+  // }
 }
