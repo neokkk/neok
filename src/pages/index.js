@@ -25,7 +25,10 @@ const IndexPage = () => {
         <div className='index'>
             <Layout>
                 <div className='index-child'>
-                    <p>{moving}</p>
+                    <p>
+                        {moving}
+                        <span>|</span>
+                    </p>
                 </div>
             </Layout>
         </div>
