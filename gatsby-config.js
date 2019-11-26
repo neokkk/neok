@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'neok\'s blog',
     description: 'JavaScript Developer neok\'s dev blog.',
-    keywords: '자바스크립트, 개발 블로그, 알고리즘, JavaScript, React, Node.js, devlog, algorithm',
+    keywords: 'neok, neokkk, 자바스크립트, 개발 블로그, 알고리즘, JavaScript, React, Node.js, devlog, algorithm',
     url: 'http://neok.netlify.com',
     siteUrl: 'http://neok.netlify.com',
     image: '/images/ball.png',
@@ -26,9 +26,6 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        // Exclude specific pages or groups of pages using glob parameters
-        // See: https://github.com/isaacs/minimatch
-        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
         exclude: ["/category/*", `/path/to/page`],
         query: `
           {
@@ -105,11 +102,38 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Your Site's RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
             match: "^/blog/",
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+            },
           },
         ],
       },
