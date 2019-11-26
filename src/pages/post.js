@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
 
@@ -10,7 +9,6 @@ import './index.scss';
 export default ({ data }) => {
   return (
     <div className='index'>
-      <SEO />
       <Layout>
         <div className='post'>
           {data.allMarkdownRemark.edges.map(({ node }) => (

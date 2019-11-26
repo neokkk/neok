@@ -3,8 +3,8 @@ module.exports = {
     title: 'neok\'s blog',
     description: 'JavaScript Developer neok\'s dev blog.',
     keywords: '자바스크립트, 개발 블로그, 알고리즘, JavaScript, React, Node.js, devlog, algorithm',
-    url: 'http://neok.netlify.com/post',
-    siteUrl: 'http://neok.netlify.com/post',
+    url: 'http://neok.netlify.com',
+    siteUrl: 'http://neok.netlify.com',
     image: '/images/ball.png',
     rights: '©2019 neok All rights reserved.',
     twitterUsername: ''
