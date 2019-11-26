@@ -159,11 +159,11 @@ const query = graphql`
 여기서 필요한 내용들을 추가하거나 빼면 된다.
 
 
-meta 데이터 관련 내용은 다음 [링크]("https://steemit.com/kr/@reggie031/html-seo-web-coding")를 참고하였다.
+meta 데이터 관련 내용은 다음 [링크](https://steemit.com/kr/@reggie031/html-seo-web-coding)를 참고하였다.
 
 <br>
 
-## ○ 참고문서
+## ○ 참고
 
 <br>
 
