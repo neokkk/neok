@@ -31,7 +31,7 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 
 ```json
 {
-    plugins: [`gatsby-plugin-react-helmet`]
+  plugins: ["gatsby-plugin-react-helmet"]
 }
 ```
 
@@ -42,19 +42,19 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 <br>
 
 ```js
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Application = () => {
-    return (
-        <div className="application">
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>My Title</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-            </Helmet>
-        </div>
-    );
+  return (
+    <div className="application">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Title</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+    </div>
+  );
 }
 ```
 
@@ -74,14 +74,14 @@ gatsby-config.js에 홈페이지 정보를 저장하고 필요할 때 graphql을
 // gatsby-config.js
 
 module.exports = {
-    siteMetadata: {
-        title: "Severus Snape",
-        titleTemplate: "%s · The Real Hero",
-        description: "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-        url: "https://www.doe.com",
-        image: "/images/snape.jpg",
-        twitterUsername: "@occlumency",
-    },
+  siteMetadata: {
+    title: 'Severus Snape',
+    titleTemplate: '%s · The Real Hero',
+    description: 'Hogwarts Potions master, Head of Slytherin house and former Death Eater.',
+    url: 'https://www.doe.com',
+    image: '/images/snape.jpg',
+    twitterUsername: '@occlumency',
+  },
 }
 ```
 <br>
@@ -97,60 +97,60 @@ gatsby에서 제공하는 기본 틀은 아래와 같다.
 <br>
 
 ```js
-import React from "react"
-import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { StaticQuery, graphql: gq } from 'gatsby';
 
 const SEO = ({ title, description, image, pathname, article }) => (
-    <StaticQuery query={query} render={({
-        site: {
-            siteMetadata: {
-                defaultTitle,
-                titleTemplate,
-                defaultDescription,
-                siteUrl,
-                defaultImage,
-            }
-        }
-    }) => {
-        const seo = {
-            title: title || defaultTitle,
-            description: description || defaultDescription,
-            image: `${siteUrl}${image || defaultImage}`,
-            url: `${siteUrl}${pathname || "/"}`,
-        }
+  <StaticQuery query={query} render={({
+    site: {
+      siteMetadata: {
+        defaultTitle,
+        titleTemplate,
+        defaultDescription,
+        siteUrl,
+        defaultImage,
+      }
+    }
+  }) => {
+    const seo = {
+      title: title || defaultTitle,
+      description: description || defaultDescription,
+      image: `${siteUrl}${image || defaultImage}`,
+      url: `${siteUrl}${pathname || '/'}`,
+    };
 
-        return (
-            <>
-                <Helmet title={seo.title} titleTemplate={titleTemplate}>
-                    <meta name="description" content={seo.description} />
-                    <meta name="image" content={seo.image} />
-                    {seo.url && <meta property="og:url" content={seo.url} />}
-                    {(article ? true : null) && (
-                        <meta property="og:type" content="article" />
-                    )}
-                    {seo.title && <meta property="og:title" content={seo.title} />}
-                    {seo.description && <meta property="og:description" content={seo.description} />}
-                </Helmet>
-            </>
-        )
-    }} />
+    return (
+      <>
+        <Helmet title={seo.title} titleTemplate={titleTemplate}>
+          <meta name="description" content={seo.description} />
+          <meta name="image" content={seo.image} />
+          {seo.url && <meta property="og:url" content={seo.url} />}
+          {(article ? true : null) && (
+            <meta property="og:type" content="article" />
+          )}
+          {seo.title && <meta property="og:title" content={seo.title} />}
+          {seo.description && <meta property="og:description" content={seo.description} />}
+        </Helmet>
+      </>
+    );
+  }} />
 );
 
 export default SEO;
 
-const query = graphql`
-    query SEO {
-        site {
-            siteMetadata {
-                defaultTitle: title
-                titleTemplate
-                defaultDescription: description
-                siteUrl: url
-                defaultImage: image
-            }
-        }
+const query = gq`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+      }
     }
+  }
 `;
 ```
 
@@ -163,17 +163,12 @@ meta 데이터 관련 내용은 다음 [링크](https://steemit.com/kr/@reggie03
 
 <br>
 
-## ○ 참고
+## ○ 참고 문서
 
 <br>
 
-<https://www.gatsbyjs.org/docs/add-page-metadata/>
+* <https://www.gatsbyjs.org/docs/add-page-metadata/>
 
+* <https://www.gatsbyjs.org/docs/add-seo-component/>
 
-<https://www.gatsbyjs.org/docs/add-seo-component/>
-
-
-<https://imweb.me/faq?mode=view&category=29&category2=35&idx=15573/>
-
-<br>
-<br>
+* <https://imweb.me/faq?mode=view&category=29&category2=35&idx=15573/>

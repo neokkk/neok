@@ -31,7 +31,6 @@ npm install --save redux react-redux
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { createStore } from 'redux';
 import rootReducer from './store/modules';
 
@@ -41,7 +40,10 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer);
 
-ReactDOM.render(<App />, document.getElementById('root));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root'),
+);
 
 serviceWorker.unregister();
 
@@ -56,7 +58,6 @@ serviceWorker.unregister();
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './store/modules';
@@ -69,10 +70,11 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
 const store = createStore(rootReducer, devTools);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>, 
-document.getElementById('root));
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root'),
+);
 
 serviceWorker.unregister();
 ```
@@ -123,25 +125,25 @@ const initialState = {
 
 /* 리듀서 */
 export default function count(state = initialState, action) {
-    switch(action.type) {
-        case INCREMENT:
-            return {
-                ...state,
-                count: state.count + 1
-            }
-        case DECREMENT:
-            return {
-                ...state,
-                count: state.count - 1
-            }
-        case RESET:
-            return {
-                ...state,
-                count: action.all === 'all' ? 0 : state.count
-            }
-        default:
-            return state;
-    }
+  switch(action.type) {
+    case INCREMENT:
+      return {
+        ...state,
+        count: state.count + 1
+      }
+    case DECREMENT:
+      return {
+        ...state,
+        count: state.count - 1
+      }
+    case RESET:
+      return {
+        ...state,
+        count: action.all === 'all' ? 0 : state.count
+      }
+    default:
+      return state;
+  }
 }
 ```
 
@@ -158,7 +160,7 @@ import { combineReducers } from 'redux';
 import count from './count';
 
 export default combineReducers({
-    count
+  count
 });
 ```
 
@@ -181,21 +183,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increase, decrease, reset } from '../store/modules/count';
 
 const Counter = () => {
-    const dispatch = useDispatch();
-    const count = useSelector(state => state.count.count);
+  const dispatch = useDispatch();
+  const count = useSelector(state => state.count.count);
 
-    const handleIncrease = () => dispatch(increase());
-    const handleDecrease = () => dispatch(decrease());
-    const handleReset = () => dispatch(reset('all'));
+  const handleIncrease = () => dispatch(increase());
+  const handleDecrease = () => dispatch(decrease());
+  const handleReset = () => dispatch(reset('all'));
 
-    return (
-        <div className='Counter'>
-            <h1>{count}</h1>
-            <button onClick={handleIncrease}>+</button>
-            <button onClick={handleDecrease}>-</button>
-            <button onClick={handleReset}>reset</button>
-        </div>
-    )
+  return (
+    <div className='Counter'>
+      <h1>{count}</h1>
+      <button onClick={handleIncrease}>+</button>
+      <button onClick={handleDecrease}>-</button>
+      <button onClick={handleReset}>reset</button>
+    </div>
+  );
 }
 
 export default Counter;
@@ -213,48 +215,42 @@ import { connect } from 'react-redux';
 
 import { increase, decrease, reset } from '../store/modules/count';
 
-const Counter = ({ props }) {
-    return (
-        <div className='Counter'>
-            <h1>{props.count}</h1>
-            <button onClick={props.handleIncrease}>+</button>
-            <button onClick={props.handleDecrease}>-</button>
-            <button onClick={props.handleReset}>reset</button>
-        </div>
-    );
+const Counter = ({ props }) => {
+  return (
+    <div className='Counter'>
+      <h1>{props.count}</h1>
+      <button onClick={props.handleIncrease}>+</button>
+      <button onClick={props.handleDecrease}>-</button>
+      <button onClick={props.handleReset}>reset</button>
+    </div>
+  );
 }
 
 const mapStateToProps = state => ({
-    count: state.count.count,
+  count: state.count.count,
 });
 
 const mapDispatchToProps = dispatch => ({
-    handleIncrease: () => dispatch(increase()),
-    handleDecrease: () => dispatch(decrease()),
-    handleReset: () => dispatch(reset('all'))
+  handleIncrease: () => dispatch(increase()),
+  handleDecrease: () => dispatch(decrease()),
+  handleReset: () => dispatch(reset('all'))
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Counter);
 ```
 
 <br>
-
-이번 경험을 통해 리덕스에 대한 막연한 두려움을 어느정도 떨쳐낸 것 같다. 나와 같은 고민을 하는 사람들이 이 방식을 많이 알았으면 한다. 
-
-<br>
 <br>
 
-## ○ 참고
+## ○ 참고 문서
 
 <br>
 
-<https://react.vlpt.us/redux/>
+* <https://react.vlpt.us/redux/>
 
+* <https://blog.joostory.net/564>
 
-<https://blog.joostory.net/564>
-
-
-<https://slee2540.tistory.com/38>
+* <https://slee2540.tistory.com/38>

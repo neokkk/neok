@@ -17,10 +17,7 @@ date: "2019-11-19"
 
 <br>
 
-스택은 한 쪽 끝에서만 데이터를 넣고 뺄 수 있는 후입선출 (Last In First Out) 구조로,
-
-
-데이터를 넣는 push와 빼는 pop 메서드로 이루어져 있다.
+스택은 한 쪽 끝에서만 데이터를 넣고 뺄 수 있는 후입선출 (Last In First Out) 구조로, 데이터를 넣는 push와 빼는 pop 메서드로 이루어져 있다.
 
 
 데이터를 넣을 때 브라우저나 사용자가 정한 스택의 사이즈를 초과하면 stack overflow 에러가 발생한다.
@@ -29,13 +26,7 @@ date: "2019-11-19"
 입력된 반대 순서로 출력되기 때문에 웹 브라우저의 방문 기록과 같은 경우에 사용된다.
 
 
-자바스크립트에서 스택의 구현은 배열로 할 수 있는데, 기본 배열 메서드로 push, pop은 물론 
-
-
-앞에서 데이터를 삽입, 삭제하는 unshift, shift까지 존재하므로
-
-
-최대한 이 메서드를 사용하지 않고 작성하려고 한다.
+자바스크립트에서 스택의 구현은 배열로 할 수 있는데, 기본 배열 메서드로 push, pop은 물론  앞에서 데이터를 삽입, 삭제하는 unshift, shift까지 존재하므로 최대한 이 메서드를 사용하지 않고 작성하려고 한다.
 
 <br>
 
@@ -45,36 +36,34 @@ date: "2019-11-19"
 
 ```js
 class Stack {
-    constructor(size) {
-        this.arr = [];
-        this.top = -1;
-        this.size = size ? size : 1000000;
+  constructor(size) {
+    this.arr = [];
+    this.top = -1;
+    this.size = size ? size : 1000000;
+  }
+
+  push(data) {
+    if (this.size === this.arr.length) {
+      console.log('This is stack overflow!');
+      return;
     }
 
-    push(data) {
-        if (this.size === this.arr.length) {
-            console.log('This is stack overflow!');
-            return;
-        }
+    this.top++;
+    this.arr[this.top] = data;
 
-        this.top++;
-        this.arr[this.top] = data;
+    console.log(this.arr);
+  }
 
-        console.log(this.arr);
-    }
+  pop() {
+    if (this.top < 0) return;
 
-    pop() {
-        if (this.top < 0) {
-            return;
-        }
+    const popped = this.arr.splice(this.top);
+    this.top--;
 
-        const popped = this.arr.splice(this.top);
-        this.top--;
+    console.log(this.arr);
 
-        console.log(this.arr);
-
-        return popped;
-    }
+    return popped;
+  }
 }
 ```
 
@@ -108,28 +97,28 @@ class Stack {
 
 ```js
 class Queue {
-    constructor(size) {
-        this.arr = [];
-        this.size = size ? size : 1000000;
+  constructor(size) {
+    this.arr = [];
+    this.size = size ? size : 1000000;
+  }
+
+  enqueue(data) {
+    if (this.arr.length === this.size) {
+      console.log('This is Queue Overflow!');
+      return;
     }
 
-    enqueue(data) {
-        if (this.arr.length === this.size) {
-            console.log('This is Queue Overflow!');
-            return;
-        }
+    this.arr.push(data);
+  }
 
-        this.arr.push(data);
+  dequeue() {
+    if (this.arr.length < 0) {
+      console.log('This is Queue Underflow!');
+      return;
     }
 
-    dequeue() {
-        if (this.arr.length < 0) {
-            console.log('This is Queue Underflow!');
-            return;
-        }
-
-        return this.arr.shift();
-    }
+    return this.arr.shift();
+  }
 }
 ```
 
@@ -146,45 +135,45 @@ class Queue {
 
 
 ```js
-import Queue;
+import Queue from './queue';
 
 class QueueToStack {
-    constructor() {
-        this.q1 = new Queue();
-        this.q2 = new Queue();
+  constructor() {
+    this.q1 = new Queue();
+    this.q2 = new Queue();
+  }
+
+  push(data) {
+    if (this.q1.arr.length || (!this.q1.arr.length && !this.q2.arr.length)) {
+      this.q1.enqueue(data);
+    } else {
+      this.q2.enqueue(data);
     }
+  }
 
-    push(data) {
-        if (this.q1.arr.length || (!this.q1.arr.length && !this.q2.arr.length)) {
-            this.q1.enqueue(data);
-        } else {
-            this.q2.enqueue(data);
-        }
+  pop() {
+    if (this.q1.arr.length) {
+      if (this.q1.arr.length < 2) {
+        return this.q1.dequeue();
+      }
+
+      while (this.q1.arr.length > 1) {
+        this.q2.enqueue(this.q1.dequeue());
+      }
+
+      return this.q1.dequeue();
+    } else {
+      if (this.q2.arr.length < 2) {
+        return this.q2.dequeue();
+      }
+
+      while (this.q2.arr.length > 1) {
+        this.q1.enqueue(this.q2.dequeue());
+      }
+
+      return this.q2.dequeue();
     }
-
-    pop() {
-        if (this.q1.arr.length) {
-            if (this.q1.arr.length < 2) {
-                return this.q1.dequeue();
-            }
-
-            while (this.q1.arr.length > 1) {
-                this.q2.enqueue(this.q1.dequeue());
-            }
-
-            return this.q1.dequeue();
-        } else {
-            if (this.q2.arr.length < 2) {
-                return this.q2.dequeue();
-            }
-
-            while (this.q2.arr.length > 1) {
-                this.q1.enqueue(this.q2.dequeue());
-            }
-
-            return this.q2.dequeue();
-        }
-    }
+  }
 }
 ```
 
@@ -196,43 +185,43 @@ class QueueToStack {
 
 
 ```js
-import Stack;
+import Stack from './stack';
 
 class StackToQueue {
-    constructor() {
-        this.s1 = new Stack();
-        this.s2 = new Stack();
+  constructor() {
+    this.s1 = new Stack();
+    this.s2 = new Stack();
+  }
+
+  enqueue(data) {
+    this.s1.push(data);
+  }
+
+  dequeue() {
+    if (this.s1.arr.length < 2) {
+      return this.s1.pop();
     }
 
-    enqueue(data) {
-        this.s1.push(data);
+    while (this.s1.arr.length > 1) {
+      this.s2.push(this.s1.pop());
     }
 
-    dequeue() {
-        if (this.s1.arr.length < 2) {
-            return this.s1.pop();
-        }
+    const dq = this.s1.pop();
 
-        while (this.s1.arr.length > 1) {
-            this.s2.push(this.s1.pop());
-        }
-
-        const dq = this.s1.pop();
-
-        while (this.s2.arr.length) {
-            this.s1.push(this.s2.pop());
-        }
-
-        return dq;
+    while (this.s2.arr.length) {
+      this.s1.push(this.s2.pop());
     }
+
+    return dq;
+  }
 }
 ```
 
 <br>
 <br>
 
-## ㅇ 참고
+## ㅇ 참고 문서
 
 <br>
 
-<https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html>
+* <https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html>

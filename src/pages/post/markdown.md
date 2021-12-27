@@ -184,14 +184,14 @@ date: "2019-09-16"
 ```
 This is a normal paragraph:
 
-    This is a code block.
+  This is a code block.
 end code block.
 ```
 
 <code>
 ```
 This is a normal paragraph:
-    This is a code block.
+  This is a code block.
 end code block.
 ```
 </code>
@@ -336,17 +336,17 @@ View 영역의 항목을 그대로 붙여넣거나 HTML 내보내기 등으로 �
 
 <br>
 
-## ○ 참고문서
+## ○ 참고 문서
 
 <br>
 
-[78 Tools for writing and previewing Markdown](http://mashable.com/2013/06/24/markdown-tools/)
+* [78 Tools for writing and previewing Markdown](http://mashable.com/2013/06/24/markdown-tools/)
 
+* [John gruber 마크다운 번역](http://nolboo.github.io/blog/2013/09/07/john-gruber-markdown/)
 
-[John gruber 마크다운 번역](http://nolboo.github.io/blog/2013/09/07/john-gruber-markdown/)
+* [깃허브 취향의 마크다운 번역](http://nolboo.github.io/blog/2014/03/25/github-flavored-markdown/)
 
+* [허니몬의 마크다운 작성법](http://www.slideshare.net/ihoneymon/ss-40575068)
 
-[깃허브 취향의 마크다운 번역](http://nolboo.github.io/blog/2014/03/25/github-flavored-markdown/)
-
-
-[허니몬의 마크다운 작성법](http://www.slideshare.net/ihoneymon/ss-40575068)
+<br>
+<br>

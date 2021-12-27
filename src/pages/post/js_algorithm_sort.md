@@ -27,18 +27,18 @@ date: "2019-10-09"
 <br>
 
 ```js
-const bubbleSort = arr => {
-    for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = 0; arr.length - 1 - i; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let tmp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = tmp;
-            }
-        }
+const bubbleSort = (arr) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let tmp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = tmp;
+      }
     }
+  }
 
-    return arr;
+  return arr;
 }
 ```
 
@@ -66,24 +66,24 @@ const bubbleSort = arr => {
 <br>
 
 ```js
-const selectionSort = arr => {
-    for (let i = 0; i < arr.length - 1; i++) {
-        let minIndex = i;
+const selectionSort = (arr) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let minIndex = i;
 
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
-        }
-
-        if (minIndex !== i) {
-            let tmp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = tmp;
-        }
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
     }
 
-    return arr;
+    if (minIndex !== i) {
+      let tmp = arr[i];
+      arr[i] = arr[minIndex];
+      arr[minIndex] = tmp;
+    }
+  }
+
+  return arr;
 }
 ```
 
@@ -105,19 +105,19 @@ const selectionSort = arr => {
 <br>
 
 ```js
-const insertionSort = arr => {
-    for (let i = 1; i < arr.length; i++) {
-        const pivot = arr[i];
+const insertionSort = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    const pivot = arr[i];
 
-        for (let j = i - 1; j >= 0; j--) {
-            if (pivot < arr[j]) {
-                arr[j + 1] = arr[j];
-                arr[j] = pivot;
-            }
-        }
+    for (let j = i - 1; j >= 0; j--) {
+      if (pivot < arr[j]) {
+        arr[j + 1] = arr[j];
+        arr[j] = pivot;
+      }
     }
+  }
 
-    return arr;
+  return arr;
 }
 ```
 
@@ -144,30 +144,30 @@ const insertionSort = arr => {
 
 ```js
 const merge = (left, right) => { // 병합
-    const merged = [];
+  const merged = [];
 
-    while (left.length && right.length) {
-        if (left[0] < right[0]) {
-            merged.push(left.shift());
-        } else {
-            merged.push(right.shift());
-        }
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      merged.push(left.shift());
+    } else {
+      merged.push(right.shift());
     }
+  }
 
-    while (left.length) left.shift();
-    while (right.length) right.shift();
+  while (left.length) left.shift();
+  while (right.length) right.shift();
 
-    return merged;
+  return merged;
 }
 
-const mergeSort = arr => { // 분할
-    if (arr.length < 2) return arr; // 재귀 탈출 조건
+const mergeSort = (arr) => { // 분할
+  if (arr.length < 2) return arr; // 재귀 탈출 조건
 
-    const middleIndex = parseInt(arr.length / 2);
-    const left = arr.slice(0, middleIndex);
-    const right = arr.slice(middleindex);
+  const middleIndex = parseInt(arr.length / 2);
+  const left = arr.slice(0, middleIndex);
+  const right = arr.slice(middleindex);
 
-    return merge(mergeSort(left), mergeSort(right));
+  return merge(mergeSort(left), mergeSort(right));
 }
 ```
 
@@ -192,28 +192,28 @@ const mergeSort = arr => { // 분할
 <br>
 
 ```js
-const quickSort = arr => {
-    if (arr.length < 2) return arr; // 재귀 탈출 조건
+const quickSort = (arr) => {
+  if (arr.length < 2) return arr; // 재귀 탈출 조건
 
-    const pivot = arr[0]; // 기준점을 첫번 째 값으로 선정했다.
+  const pivot = arr[0]; // 기준점을 첫번 째 값으로 선정했다.
 
-    const left = [];
-    const right = [];
+  const left = [];
+  const right = [];
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < pivot) left.push(arr[i]);
-        else right.push(arr[i]);
-    }
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
 
-    return quickSort(left).concat(pivot, quickSort(right));
+  return quickSort(left).concat(pivot, quickSort(right));
 }
 ```
 
 <br>
 <br>
 
-## ㅇ 참고
+## ㅇ 참고 문서
 
 <br>
 
-<https://www.zerocho.com/category/Algorithm/>
+* <https://www.zerocho.com/category/Algorithm/>
