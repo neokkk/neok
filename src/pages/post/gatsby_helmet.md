@@ -19,9 +19,9 @@ gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("http
 
 <br>
 
-````
+```bash
 npm install --save gatsby-plugin-react-helmet react-helmet
-````
+```
 
 <br>
 
@@ -29,11 +29,11 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 
 <br>
 
-````
+```json
 {
     plugins: [`gatsby-plugin-react-helmet`]
 }
-````
+```
 
 <br>
 
@@ -41,7 +41,7 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 
 <br>
 
-````
+```js
 import React from "react"
 import { Helmet } from "react-helmet"
 
@@ -56,7 +56,7 @@ const Application = () => {
         </div>
     );
 }
-````
+```
 
 <br>
 
@@ -70,7 +70,7 @@ gatsby-config.js에 홈페이지 정보를 저장하고 필요할 때 graphql을
 
 <br>
 
-````
+```js
 // gatsby-config.js
 
 module.exports = {
@@ -83,7 +83,7 @@ module.exports = {
         twitterUsername: "@occlumency",
     },
 }
-````
+```
 <br>
 
 SEO 컴포넌트를 만들어주자.
@@ -96,7 +96,7 @@ gatsby에서 제공하는 기본 틀은 아래와 같다.
 
 <br>
 
-````
+```js
 import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
@@ -137,7 +137,7 @@ const SEO = ({ title, description, image, pathname, article }) => (
     }} />
 );
 
-export default SEO
+export default SEO;
 
 const query = graphql`
     query SEO {
@@ -151,8 +151,8 @@ const query = graphql`
             }
         }
     }
-`
-````
+`;
+```
 
 <br>
 
@@ -177,6 +177,3 @@ meta 데이터 관련 내용은 다음 [링크](https://steemit.com/kr/@reggie03
 
 <br>
 <br>
-
-~~코드 폰트들이 왜 저런지...? 빠른 시일 내에 수정해야겠다.~~
-

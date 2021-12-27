@@ -26,7 +26,7 @@ date: "2019-10-09"
 
 <br>
 
-````
+```js
 const bubbleSort = arr => {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = 0; arr.length - 1 - i; j++) {
@@ -40,7 +40,7 @@ const bubbleSort = arr => {
 
     return arr;
 }
-````
+```
 
 <br>
 <br>
@@ -65,7 +65,7 @@ const bubbleSort = arr => {
 
 <br>
 
-````
+```js
 const selectionSort = arr => {
     for (let i = 0; i < arr.length - 1; i++) {
         let minIndex = i;
@@ -85,7 +85,7 @@ const selectionSort = arr => {
 
     return arr;
 }
-````
+```
 
 <br>
 <br>
@@ -104,7 +104,7 @@ const selectionSort = arr => {
 
 <br>
 
-````
+```js
 const insertionSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         const pivot = arr[i];
@@ -119,7 +119,7 @@ const insertionSort = arr => {
 
     return arr;
 }
-````
+```
 
 <br>
 <br>
@@ -142,7 +142,7 @@ const insertionSort = arr => {
 
 <br>
 
-````
+```js
 const merge = (left, right) => { // 병합
     const merged = [];
 
@@ -169,7 +169,7 @@ const mergeSort = arr => { // 분할
 
     return merge(mergeSort(left), mergeSort(right));
 }
-````
+```
 
 <br>
 <br>
@@ -191,7 +191,7 @@ const mergeSort = arr => { // 분할
 
 <br>
 
-````
+```js
 const quickSort = arr => {
     if (arr.length < 2) return arr; // 재귀 탈출 조건
 
@@ -207,7 +207,7 @@ const quickSort = arr => {
 
     return quickSort(left).concat(pivot, quickSort(right));
 }
-````
+```
 
 <br>
 <br>

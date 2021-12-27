@@ -43,7 +43,7 @@ date: "2019-11-19"
 
 <br>
 
-````
+```js
 class Stack {
     constructor(size) {
         this.arr = [];
@@ -76,7 +76,7 @@ class Stack {
         return popped;
     }
 }
-````
+```
 
 <br>
 <br>
@@ -106,7 +106,7 @@ class Stack {
 
 <br>
 
-````
+```js
 class Queue {
     constructor(size) {
         this.arr = [];
@@ -131,7 +131,7 @@ class Queue {
         return this.arr.shift();
     }
 }
-````
+```
 
 <br>
 <br>
@@ -145,7 +145,7 @@ class Queue {
 <br>
 
 
-````
+```js
 import Queue;
 
 class QueueToStack {
@@ -186,7 +186,7 @@ class QueueToStack {
         }
     }
 }
-````
+```
 
 <br>
 
@@ -195,7 +195,7 @@ class QueueToStack {
 <br>
 
 
-````
+```js
 import Stack;
 
 class StackToQueue {
@@ -226,7 +226,7 @@ class StackToQueue {
         return dq;
     }
 }
-````
+```
 
 <br>
 <br>

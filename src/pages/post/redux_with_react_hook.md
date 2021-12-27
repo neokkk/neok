@@ -4,7 +4,7 @@ date: "2019-11-26"
 ---
 
 
-리액트. 자바스크립트를 정말 사용하기 편하게 해주는 라이브러리지만, 컴포넌트 구조에 익숙하지 않다면 시작이 쉽지 않다. 또한 효율적으로 SPA를 구현하기 위해서는 라우터와 상태 관리 라이브러리의 사용이 거의 필수적인데, [리덕스](https://redux.js.org/, "리덕스 페이지")와 [Mobx](https://mobx.js.org/README.html, "mobx 페이지")로 대표되는 이 상태 관리 라이브러리가 리액트를 시작하는데 있어 가장 큰 진입 장벽이 아닐까 한다.
+리액트. 자바스크립트를 정말 사용하기 편하게 해주는 라이브러리지만, 컴포넌트 구조에 익숙하지 않다면 시작이 쉽지 않다. 효율적으로 SPA를 구현하기 위해서는 라우터와 상태 관리 라이브러리의 사용이 거의 필수적인데, [리덕스](https://redux.js.org/, "리덕스 페이지")와 [Mobx](https://mobx.js.org/README.html, "mobx 페이지")로 대표되는 이 상태 관리 라이브러리가 리액트를 시작하는데 있어 가장 큰 진입 장벽이 아닐까 한다.
 
 <br>
 
@@ -16,9 +16,9 @@ date: "2019-11-26"
 
 <br>
 
-````
+```bash
 npm install --save redux react-redux
-````
+```
 
 <br>
 
@@ -26,7 +26,7 @@ npm install --save redux react-redux
 
 <br>
 
-````
+```js
 // src/index.js
 
 import React from 'react';
@@ -45,7 +45,7 @@ ReactDOM.render(<App />, document.getElementById('root));
 
 serviceWorker.unregister();
 
-````
+```
 
 <br>
 
@@ -53,7 +53,7 @@ serviceWorker.unregister();
 
 <br>
 
-````
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -75,7 +75,7 @@ ReactDOM.render(
 document.getElementById('root));
 
 serviceWorker.unregister();
-````
+```
 
 <br>
 
@@ -103,7 +103,7 @@ App을 감싼 Provider에 store로 연결해주면 완료된다. 참고로 스�
 
 <br>
 
-````
+```js
 // src/store/modules/count.js
 
 /* 액션 타입 정의 */
@@ -143,7 +143,7 @@ export default function count(state = initialState, action) {
             return state;
     }
 }
-````
+```
 
 <br>
 
@@ -151,7 +151,7 @@ export default function count(state = initialState, action) {
 
 <br>
 
-````
+```js
 // src/store/modules/index.js
 
 import { combineReducers } from 'redux';
@@ -160,7 +160,7 @@ import count from './count';
 export default combineReducers({
     count
 });
-````
+```
 
 <br>
 
@@ -172,7 +172,7 @@ export default combineReducers({
 
 <br>
 
-````
+```js
 // src/components/Counter.js
 
 import React from 'react';
@@ -199,7 +199,7 @@ const Counter = () => {
 }
 
 export default Counter;
-````
+```
 
 <br>
 
@@ -207,7 +207,7 @@ export default Counter;
 
 <br>
 
-````
+```js
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -238,7 +238,7 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Counter);
-````
+```
 
 <br>
 
