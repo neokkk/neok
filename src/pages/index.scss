@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
-@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 
-@import '../components/Header.scss';
+@import "../components/Header.scss";
 
 *, html { margin: 0; padding: 0; }
 
 .index {
   color: $gray;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 80%;
   min-width: 1200px;
   height: 100vh;
@@ -20,7 +20,7 @@
 
   &-child {
     height: 100%;
-    font-family: 'Spoqa Han Sans', sans-serif;
+    font-family: "Spoqa Han Sans", sans-serif;
     font-weight: lighter;
     display: flex;
     flex-direction: column;
@@ -33,18 +33,4 @@
     padding: 0 50px;
   }
 
-  /* media query */
-  // @media (max-width: 1000px) {
-  //   width: 100%;
-  //   height: 100vh;
-  //   display: flex;
-  //   justify-content: center;
-
-  //   &-child {
-  //     width: 100%;
-  //     display: flex;
-  //     justify-content: flex-start;
-  //     align-items: center;
-  //   }
-  // }
 }

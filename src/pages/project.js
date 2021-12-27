@@ -7,21 +7,21 @@ import './index.scss';
 import { projects } from '../constant/projects';
 
 const ProjectPage = () => {
-    const [pin, setPin] = useState(false);
+  const [pin, setPin] = useState(false);
 
-    useEffect(() => {
-        setPin(true);
-    });
+  useEffect(() => {
+    setPin(true);
+  });
 
-    return (
-        <div className='index'>
-            <Layout>
-                {pin && projects.reverse().map((p, index) => 
-                    <Item info={p} index={index + 1} />
-                )}
-            </Layout>
-        </div>
-    );
+  return (
+    <div className="index">
+      <Layout>
+        {pin && projects.reverse().map((p, index) => 
+          <Item info={p} index={index + 1} />
+        )}
+      </Layout>
+    </div>
+  );
 }
 
 export default ProjectPage;

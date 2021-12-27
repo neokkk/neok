@@ -1,93 +1,91 @@
-@import '../pages/index.scss';
-@import '../components/Header.scss';
+@import "../pages/index.scss";
+@import "../components/Header.scss";
 
 @mixin hoverTransition {
-    a {
-        transition: all 0.2s ease-in-out;
+  a {
+    transition: all 0.2s ease-in-out;
 
-        &:hover {
-            transition: all 0.2s ease-in-out;
-        }
+    &:hover {
+      transition: all 0.2s ease-in-out;
     }
+  }
 }
 
 *, html { margin: 0; padding: 0 }
 
 .blog-post {
-    @include hoverTransition();
+  @include hoverTransition();
 
-    color: $gray;
-    width: 60%;
-    min-width: 500px;
-    height: 100%;
-    margin: 100px auto;
+  color: $gray;
+  width: 60%;
+  min-width: 500px;
+  height: 100%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  pre {
+    width: 100%;
+    background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    text-align: left;
 
-    pre {
-        width: 100%;
-        background-color: #f8f8f8;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        box-sizing: border-box;
-        overflow-x: auto;
-        text-align: left;
+    code {
+      font-size: 13px;
+      font-family: 'Source Code Pro', monospace;
+      color: $gray;
+    }
+  }
 
-        code {
-            font-size: 13px;
-            font-family: 'Source Code Pro', monospace;
-            color: $gray;
-        }
+  &-back {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+
+    &:visited {
+      color: $gray;
     }
 
-    &-back {
-        font-family: 'Montserrat', sans-serif;
-        text-decoration: none;
-
-        &:visited {
-            color: $gray;
-        }
-
-        &:hover {
-            color: $orange;
-        }
+    &:hover {
+      color: $orange;
     }
+  }
 
-    &-title {
-        color: $orange;
-        font-size: 35px;
-        font-family: 'Spoqa Han Sans', sans-serif;
-        margin: 20px 0 15px 0;
+  &-title {
+    color: $orange;
+    font-size: 35px;
+    font-family: 'Spoqa Han Sans', sans-serif;
+    margin: 20px 0 15px 0;
+  }
+
+  &-date {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  &-html {
+    font-family: 'Spoqa Han Sans', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    padding: 100px 20px 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: $orange;
+      text-decoration: none;
+      
+      &:hover {
+        color: white;
+        background-color: $orange;
+      }
     }
-
-    &-date {
-        font-size: 13px;
-        opacity: 0.7;
-    }
-
-    &-html {
-        font {
-            family: 'Spoqa Han Sans', sans-serif;
-            size: 1rem;
-        }
-        width: 100%;
-        padding: 100px 20px 20px 20px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-
-        a {
-            color: $orange;
-            text-decoration: none;
-            
-            &:hover {
-                color: white;
-                background-color: $orange;
-            }
-        }
-    }
+  }
 }

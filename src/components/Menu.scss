@@ -1,33 +1,28 @@
-@import 'Header.scss';
+@import "Header.scss";
 
 .menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 
-    a {
-        text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+
+  &-li {
+    color: $gray;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      color: $orange;
+      transition: all 0.2s ease-in-out;
     }
+  }
 
-    &-li {
-        color: $gray;
-        margin-right: 20px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        
-        &:hover {
-            color: $orange;
-            transition: all 0.2s ease-in-out;
-        }
-
-    }
-
-    .clicked {
-        color: $orange;
-    }
-
-    /* @media (max-width: 1000px) {
-        width: 100%;
-    } */
+  .clicked {
+    color: $orange;
+  }
 }
