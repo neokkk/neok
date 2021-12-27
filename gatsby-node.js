@@ -8,9 +8,9 @@ const onCreateNode = ({ node, getNode, actions }) => {
     const slug = createFilePath({ node, getNode, basePath: 'post' });
 
     createNodeField({
-        node,
-        name: 'slug',
-        value: slug
+      node,
+      name: 'slug',
+      value: slug
     });
   }
 }

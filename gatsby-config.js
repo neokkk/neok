@@ -40,14 +40,10 @@ module.exports = {
               }
             }  
         }`,
-        serialize: ({ allSitePage, site }) =>
-          allSitePage.nodes.map((node) => ({
-            url: site.siteMetadata.siteUrl + node.path,
-            changefreq: 'daily',
-            priority: 0.7,
-          })
-        ),
-      }
+        serialize: ({ path }) => ({
+          url: path,
+        }),
+      },
     },
     {
       resolve: 'gatsby-plugin-feed',
