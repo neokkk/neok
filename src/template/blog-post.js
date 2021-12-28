@@ -3,24 +3,29 @@ import { graphql } from 'gatsby';
 
 import './blog-post.scss';
 import Layout from '../components/Layout';
-// import Seo from '../components/Seo';
+import Seo from '../components/Seo';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
+  const {
+    date,
+    tags,
+    title,
+  } = post;
 
   return (
     <div class="page post">
-      {/* <Seo
-        title={post.frontmatter.title}
+      <Seo
+        title={title}
         description={post.excerpt}
-        keywords={post.frontmatter.title}
+        keywords={tags.join(', ')}
         pathname={post.fields.slug}
-      /> */}
+      />
 
       <Layout>
         <div className="blog-post">
-          <h1 className="blog-post-title">{post.frontmatter.title}</h1>
-          <p className="blog-post-date">{post.frontmatter.date}</p>
+          <h1 className="blog-post-title">{title}</h1>
+          <p className="blog-post-date">{date}</p>
           <div className="blog-post-html" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </Layout>
