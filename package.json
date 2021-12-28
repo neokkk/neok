@@ -12,9 +12,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.4.0",
     "gatsby-plugin-feed": "^4.4.0",
@@ -36,7 +33,6 @@
     "webpack": "^5.65.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.2",
     "@types/react-dom": "^17.0.11",
     "@types/react-helmet": "^6.1.5",
     "@types/styled-components": "^5.1.19",
