@@ -1,6 +1,7 @@
 ---
-title: "자바스크립트 정렬 알고리즘"
-date: "2019-10-09"
+title: '자바스크립트 정렬 알고리즘'
+date: '2019-10-09'
+tags: ['js', 'algorithm', 'sort']
 ---
 
 
@@ -9,12 +10,12 @@ date: "2019-10-09"
 
 거품 정렬, 선택 정렬, 삽입 정렬, 합병 정렬, 퀵 정렬 순으로 정리하였다.
 
-<br>
-<br>
+<br />
+<br />
 
 ## 거품 정렬 (Bubble Sort)
 
-<br>
+<br />
 
 제일 큰 수를 오른쪽으로 밀면서 정렬한다.
 
@@ -24,7 +25,7 @@ date: "2019-10-09"
 
 배열 길이 - 1 만큼 반복하는 이유는 2개씩 묶어서 비교를 하기 때문이다.
 
-<br>
+<br />
 
 ```js
 const bubbleSort = (arr) => {
@@ -42,12 +43,12 @@ const bubbleSort = (arr) => {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 선택 정렬 (Selection Sort)
 
-<br>
+<br />
 
 비교하려는 범위 중 제일 작은 수를 찾아 맨 앞으로 보는 방식이다.
 
@@ -63,7 +64,7 @@ const bubbleSort = (arr) => {
 
 비교하려는 범위의 길이가 1일 경우는 비교 할 대상이 없으므로 베열 길이 - 1 만큼만 반복해도 된다.
 
-<br>
+<br />
 
 ```js
 const selectionSort = (arr) => {
@@ -87,12 +88,12 @@ const selectionSort = (arr) => {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 삽입 정렬 (Insertion Sort)
 
-<br>
+<br />
 
 배열의 앞 부터 시작해 자리를 이동하며 해당 자리 앞쪽의 값과 비교하는 방식이다.
 
@@ -102,7 +103,7 @@ const selectionSort = (arr) => {
 
 시간 복잡도는 O(n^2) 선택 정렬과 마찬가지로 작은 수에서 성능이 좋다.
 
-<br>
+<br />
 
 ```js
 const insertionSort = (arr) => {
@@ -121,12 +122,12 @@ const insertionSort = (arr) => {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 합병 정렬 (Merge Sort)
 
-<br>
+<br />
 
 합병 정렬 부터는 정렬 과정이 분할과 정복 2단계로 나눠진다.
 
@@ -140,7 +141,7 @@ const insertionSort = (arr) => {
 
 정렬 시 새로운 배열이 필요하므로 추가적인 메모리가 필요하다는 단점이 있다.
 
-<br>
+<br />
 
 ```js
 const merge = (left, right) => { // 병합
@@ -171,12 +172,12 @@ const mergeSort = (arr) => { // 분할
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 퀵 정렬 (Quick Sort)
 
-<br>
+<br />
 
 합병 정렬과 마찬가지로 분할, 정복의 과정이 있는 정렬이다.
 
@@ -189,7 +190,7 @@ const mergeSort = (arr) => { // 분할
 
 최악의 경우가 존재하는데, 선택한 값들이 항상 최소이거나 최대일 경우이다. 이 때 시간 복잡도는 O(n^2)이나 확률이 희박하다.
 
-<br>
+<br />
 
 ```js
 const quickSort = (arr) => {
@@ -209,11 +210,11 @@ const quickSort = (arr) => {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## ㅇ 참고 문서
 
-<br>
+<br />
 
 * <https://www.zerocho.com/category/Algorithm/>

@@ -1,21 +1,22 @@
 ---
-title: "자바스크립트 자료구조 (스택, 큐)"
-date: "2019-11-19"
+title: '자바스크립트 자료구조 (스택, 큐)'
+date: '2019-11-19'
+tags: ['js', 'data-structure', 'stack', 'queue']
 ---
 
 
 가장 기본적인 자료구조인 스택과 큐를 자바스크립트 코드로 작성해보자.
 
-<br>
-<br>
+<br />
+<br />
 
 ## 스택 (Stack)
 
-<br>
+<br />
 
 ### 스택이란?
 
-<br>
+<br />
 
 스택은 한 쪽 끝에서만 데이터를 넣고 뺄 수 있는 후입선출 (Last In First Out) 구조로, 데이터를 넣는 push와 빼는 pop 메서드로 이루어져 있다.
 
@@ -28,11 +29,11 @@ date: "2019-11-19"
 
 자바스크립트에서 스택의 구현은 배열로 할 수 있는데, 기본 배열 메서드로 push, pop은 물론  앞에서 데이터를 삽입, 삭제하는 unshift, shift까지 존재하므로 최대한 이 메서드를 사용하지 않고 작성하려고 한다.
 
-<br>
+<br />
 
 ### 구현
 
-<br>
+<br />
 
 ```js
 class Stack {
@@ -67,16 +68,16 @@ class Stack {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 큐 (Queue)
 
-<br>
+<br />
 
 ### 큐란?
 
-<br>
+<br />
 
 큐는 먼저 집어넣은 데이터가 먼저 출력되는 선입선출 (First Input First Out) 구조로, 스택과는 반대되는 개념이다.
 
@@ -89,11 +90,11 @@ class Stack {
 
 입력된 순서대로 출력되기 때문에 프린터 출력이나 캐시, 대기 등에 사용된다.
 
-<br>
+<br />
 
 ### 구현
 
-<br>
+<br />
 
 ```js
 class Queue {
@@ -122,16 +123,16 @@ class Queue {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## 심화
 
-<br>
+<br />
 
 ### 큐 2개로 스택 구현하기
 
-<br>
+<br />
 
 
 ```js
@@ -177,11 +178,11 @@ class QueueToStack {
 }
 ```
 
-<br>
+<br />
 
 ### 스택 2개로 큐 구현하기
 
-<br>
+<br />
 
 
 ```js
@@ -217,11 +218,11 @@ class StackToQueue {
 }
 ```
 
-<br>
-<br>
+<br />
+<br />
 
 ## ㅇ 참고 문서
 
-<br>
+<br />
 
 * <https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html>

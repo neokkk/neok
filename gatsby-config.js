@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'markdowns',
+        name: 'posts',
         path: `${__dirname}/src/pages/post`,
       },
     },
@@ -84,12 +84,13 @@ module.exports = {
                 ) {
                   nodes {
                     excerpt
-                    html
                     fields { slug }
                     frontmatter {
-                      title
                       date
+                      tags
+                      title
                     }
+                    html
                   }
                 }
               }

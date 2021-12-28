@@ -1,6 +1,7 @@
 ---
-title: "gatsby-helmet으로 검색 엔진 최적화하기"
-date: "2019-09-25"
+title: 'gatsby-helmet으로 검색 엔진 최적화하기'
+date: '2019-09-25'
+tags: ['react', 'gatsby', 'seo', 'meta']
 ---
 
 배포 후 수정 할 부분들이 많이 보인다.
@@ -17,17 +18,17 @@ html head 태그 내부에 작성하는 meta 태그는 홈페이지를 설명하
 
 gatsby는 기본적으로 react를 지원하기 때문에 **[react-helmet]("https://github.com/nfl/react-helmet#example", react-helmet docs link)**과 **gatsby-plugin-react-helmet** 패키지를 받으면 된다.
 
-<br>
+<br />
 
 ```bash
 npm install --save gatsby-plugin-react-helmet react-helmet
 ```
 
-<br>
+<br />
 
 그리고 gatsby-config.js 파일에 해당 플러그인을 추가해주자.
 
-<br>
+<br />
 
 ```json
 {
@@ -35,11 +36,11 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 }
 ```
 
-<br>
+<br />
 
 기본적으로 helmet을 사용하는 방법은 다음과 같다.
 
-<br>
+<br />
 
 ```js
 import React from 'react';
@@ -58,7 +59,7 @@ const Application = () => {
 }
 ```
 
-<br>
+<br />
 
 helmet 태그 내부에 작성하고 싶은 head 내용을 작성하면 된다. 
 
@@ -68,7 +69,7 @@ helmet 태그 내부에 작성하고 싶은 head 내용을 작성하면 된다.
 
 gatsby-config.js에 홈페이지 정보를 저장하고 필요할 때 graphql을 이용해 불러올 수 있다.
 
-<br>
+<br />
 
 ```js
 // gatsby-config.js
@@ -84,7 +85,7 @@ module.exports = {
   },
 }
 ```
-<br>
+<br />
 
 SEO 컴포넌트를 만들어주자.
 
@@ -94,7 +95,7 @@ gatsby에서 제공하는 staticQuery 태그를 이용해 graphql로 불러온 �
 
 gatsby에서 제공하는 기본 틀은 아래와 같다.
 
-<br>
+<br />
 
 ```js
 import React from 'react';
@@ -154,18 +155,18 @@ const query = gq`
 `;
 ```
 
-<br>
+<br />
 
 여기서 필요한 내용들을 추가하거나 빼면 된다.
 
 
 meta 데이터 관련 내용은 다음 [링크](https://steemit.com/kr/@reggie031/html-seo-web-coding)를 참고하였다.
 
-<br>
+<br />
 
 ## ○ 참고 문서
 
-<br>
+<br />
 
 * <https://www.gatsbyjs.org/docs/add-page-metadata/>
 
