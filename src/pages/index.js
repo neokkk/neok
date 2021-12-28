@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+// import Seo from '../components/Seo';
 import Post from '../components/Post';
 
 import './index.scss';
@@ -10,7 +10,7 @@ import './index.scss';
 const IndexPage = ({ data }) => {
   return (
     <div className="page index">
-      <Seo />
+      {/* <Seo /> */}
       <Layout>
         <div className="posts">
           {data.allMarkdownRemark.nodes.map((node) => (

@@ -10,14 +10,14 @@ export default ({ data }) => {
 
   return (
     <div class="page post">
-      <Layout>
-        <Seo
-          title={post.frontmatter.title}
-          description={post.excerpt}
-          keywords={post.frontmatter.title}
-          pathname={post.fields.slug}
-        />
+      <Seo
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        keywords={post.frontmatter.title}
+        pathname={post.fields.slug}
+      />
 
+      <Layout>
         <div className="blog-post">
           <h1 className="blog-post-title">{post.frontmatter.title}</h1>
           <p className="blog-post-date">{post.frontmatter.date}</p>
