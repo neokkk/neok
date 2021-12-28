@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -13,7 +14,15 @@ const onCreateNode = ({ node, getNode, actions }) => {
       value: slug
     });
   }
-}
+};
+
+const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  });
+};
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -36,15 +45,16 @@ const createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      component: path.resolve('./src/template/blog-post.js'),
+      component: path.resolve('./src/template/blog-post.tsx'),
       context: {
         slug,
       },
     });
   });
-}
+};
 
 module.exports = {
   onCreateNode,
+  onCreateWebpackConfig,
   createPages,
 };

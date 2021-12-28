@@ -1,11 +1,16 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { PageProps, graphql } from 'gatsby';
 
-import './blog-post.scss';
-import Layout from '../components/Layout';
 import Seo from '../components/Seo';
+import Layout from './layout';
+import { Date, Html, Title, Wrapper } from '@/styles/blog-post';
+import PostInfo from '@/types/post';
 
-const Post = ({ data }) => {
+type PostQuery = {
+  markdownRemark: PostInfo & { html: string },
+};
+
+const Post: React.FC<PageProps<PostQuery>> = ({ data }) => {
   const post = data.markdownRemark;
   const {
     date,
@@ -14,7 +19,7 @@ const Post = ({ data }) => {
   } = post.frontmatter;
 
   return (
-    <div className="page post">
+    <React.Fragment>
       <Seo
         title={title}
         description={post.excerpt}
@@ -23,13 +28,13 @@ const Post = ({ data }) => {
       />
 
       <Layout>
-        <div className="blog-post">
-          <h1 className="blog-post-title">{title}</h1>
-          <p className="blog-post-date">{date}</p>
-          <div className="blog-post-html" dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+        <Wrapper>
+          <Title>{title}</Title>
+          <Date>{date}</Date>
+          <Html dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Wrapper>
       </Layout>
-    </div>
+    </React.Fragment>
   )
 };
 

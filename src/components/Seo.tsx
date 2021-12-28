@@ -2,7 +2,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-const Seo = ({ title, description, keywords, image, pathname }) => (
+type SeoProps = {
+  description?: string,
+  keywords?: string,
+  image?: string,
+  pathname?: string,
+  title?: string,
+}
+
+const Seo: React.FC<SeoProps> = ({ title, description, keywords, image, pathname }) => (
   <StaticQuery query={query} render={({
     site: {
       siteMetadata: {
@@ -33,7 +41,6 @@ const Seo = ({ title, description, keywords, image, pathname }) => (
         {seo.description && <meta property="og:description" content={seo.description} />}
         {seo.image && <meta property="og:image" content={seo.image} />}
         {seo.image && <meta property="og:image" content={seo.image} />}
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         {twitterUsername && <meta name="twitter:creator" content={twitterUsername} />}
         {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.description && <meta name="twitter:description" content={seo.description} />}

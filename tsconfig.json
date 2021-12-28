@@ -1,12 +1,20 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "es2017"],
+    "target": "es6",
+    "lib": ["dom", "esnext"],
     "module": "esnext",
-    "jsx": "react",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["static/*"]
+    },
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["public", ".cache"]
 }
