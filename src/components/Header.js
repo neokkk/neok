@@ -20,7 +20,7 @@ const Header = () => {
     <div className="header">
       <Link to="/" className="header-logo">neok</Link>
 
-      <div>
+      {/* <div>
         <div className="header-link">
           <a href="https://github.com/neokkk" target="_blank" rel="noopener">
             <img src="/images/github.png" alt="github" />
@@ -33,7 +33,7 @@ const Header = () => {
           </a>
         </div>
         <span className="header-copyright">{data.site.siteMetadata.rights}</span>
-      </div>
+      </div> */}
     </div>
   );
 }

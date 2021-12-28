@@ -1,0 +1,15 @@
+$gray: #474747;
+$orange: #ff7a0f;
+$yellow: #fde872;
+
+$md-down: 'max-width: 700px';
+
+@mixin hoverTransition {
+  a {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

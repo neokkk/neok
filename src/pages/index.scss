@@ -2,21 +2,21 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
 @import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 
-@import "../components/Header.scss";
+@import "../styles/common.scss";
 
-*, html { margin: 0; padding: 0; }
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-.index {
+.page {
   color: $gray;
   font-family: "Montserrat", sans-serif;
   width: 80%;
-  min-width: 1200px;
-  height: 100vh;
+  max-width: 1200px;
   min-height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  margin: 50px auto;
 
   &-child {
     height: 100%;
@@ -29,8 +29,11 @@
     position: relative;
   }
 
-  .post {
-    padding: 0 50px;
+  @media ($md-down) {
+    width: 100%;
   }
+}
 
+.posts {
+  margin: 20px 0;
 }

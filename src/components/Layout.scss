@@ -1,13 +1,12 @@
 .layout {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
 
   &-content {
-    width: 70%;
-    height: 500px;
-    padding: 50px 80px;
-    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;

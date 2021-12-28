@@ -6,33 +6,34 @@ import Post from '../components/Post';
 
 import './index.scss';
 
-export default ({ data }) => {
+const PostPage = ({ data }) => {
   return (
-    <div className="index">
+    <div className="page post">
       <Layout>
-        <div className="post">
-          {data.allMarkdownRemark.nodes.map((node) => (
-            <Post key={node.id} info={node} />
-          ))}
-        </div>
+        {data.allMarkdownRemark.nodes.map((node) => (
+          <Post key={node.id} info={node} />
+        ))}
       </Layout>
     </div>
   );
 };
+
+export default PostPage;
 
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         id
-        frontmatter {
-          title
-          date(formatString: "DD MMM, YYYY")
-        }
+        excerpt
         fields {
           slug
         }
-        excerpt
+        frontmatter {
+          date(formatString: "DD MMM, YYYY")
+          tags
+          title
+        }
       }
     }
   }

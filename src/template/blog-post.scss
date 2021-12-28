@@ -1,26 +1,13 @@
-@import "../pages/index.scss";
-@import "../components/Header.scss";
-
-@mixin hoverTransition {
-  a {
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      transition: all 0.2s ease-in-out;
-    }
-  }
-}
-
-*, html { margin: 0; padding: 0 }
+@import "../styles/common.scss";
 
 .blog-post {
   @include hoverTransition();
 
   color: $gray;
-  width: 60%;
-  min-width: 500px;
+  max-width: 700px;
+  width: 100%;
   height: 100%;
-  margin: 100px auto;
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +26,15 @@
 
     code {
       font-size: 13px;
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Source Code Pro", monospace;
       color: $gray;
     }
   }
 
   &-back {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-decoration: none;
+    align-self: start;
 
     &:visited {
       color: $gray;
@@ -59,21 +47,22 @@
 
   &-title {
     color: $orange;
-    font-size: 35px;
-    font-family: 'Spoqa Han Sans', sans-serif;
-    margin: 20px 0 15px 0;
+    font-size: 2.2rem;
+    font-family: "Spoqa Han Sans", sans-serif;
+    margin: 20px;
   }
 
   &-date {
-    font-size: 13px;
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-size: 0.8rem;
     opacity: 0.7;
   }
 
   &-html {
-    font-family: 'Spoqa Han Sans', sans-serif;
-    font-size: 1rem;
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-size: 0.95rem;
     width: 100%;
-    padding: 100px 20px 20px 20px;
+    padding: 60px 20px 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -85,7 +74,35 @@
       &:hover {
         color: white;
         background-color: $orange;
+        padding: 0 4px;
+        border-radius: 4px;
       }
+    }
+
+    img {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    ol,
+    ul {
+      padding-left: 18px;
+    }
+
+    hr {
+      color: #{$gray}20;
+    }
+  }
+
+  @media ($md-down) {
+    margin: 20px auto;
+
+    &-title {
+      font-size: 1.8rem;
+    }
+
+    &-html {
+      font-size: 0.9rem;
     }
   }
 }

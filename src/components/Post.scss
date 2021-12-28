@@ -1,16 +1,34 @@
-@import "./Header.scss";
+@import "../styles/common.scss";
 
-.posts {
-  margin: 3px 0;
+.post-item {
+  font-family: "Spoqa Han Sans", sans-serif;
+  margin: 1rem 0;
 
   a {
     color: $gray;
     text-decoration: none;
     position: relative;
     z-index: 1;
+   
+    &:visited {
+      color: $gray;
+    }
+  }
 
-    &:after {
+  &-date {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+
+    &::after {
       content: '';
+      background-color: $yellow;
       position: absolute;
       left: 0;
       bottom: 2px;
@@ -18,30 +36,44 @@
       height: 10px;
       transition: all 0.4s ease-in-out;
       opacity: 0;
-      background-color: $yellow;
       z-index: -1;
-    }
-    
-    &:visited {
-      color: $gray;
     }
 
     &:hover {
-      &:after {
+      &::after {
         width: 100%;
         opacity: 1;
       }
     }
+  }
 
-    span {
-      font-size: 24px;
-      font-family: "Spoqa Han Sans", sans-serif;
+  &-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0 4px;
 
-      &:last-child {
-        font-size: 15px;
-        opacity: 0.7;
-        margin-left: 10px;
-      }
+
+    li {
+      list-style: none;
+      text-decoration: none;
+      display: inline;
+      opacity: .8;
+    }
+  }
+
+  @media ($md-down) {
+    &-date {
+      font-size: 0.7rem;
+    }
+
+    &-title {
+      font-size: 1.2rem;
+    }
+
+    &-tags {
+      font-size: 0.9rem;
     }
   }
 }

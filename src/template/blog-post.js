@@ -1,24 +1,29 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 
 import './blog-post.scss';
-import SEO from '../components/SEO';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
-    <div className="blog-post">
-      <SEO
-        title={post.frontmatter.title}
-        description={post.excerpt}
-        keywords={post.frontmatter.title}
-        pathname={post.fields.slug}
-      />
-      <Link to="/post" className="blog-post-back">category</Link>
-      <h1 className="blog-post-title">{post.frontmatter.title}</h1>
-      <p className="blog-post-date">{post.frontmatter.date}</p>
-      <div className="blog-post-html" dangerouslySetInnerHTML={{ __html: post.html }} />
+    <div class="page post">
+      <Layout>
+        <Seo
+          title={post.frontmatter.title}
+          description={post.excerpt}
+          keywords={post.frontmatter.title}
+          pathname={post.fields.slug}
+        />
+
+        <div className="blog-post">
+          <h1 className="blog-post-title">{post.frontmatter.title}</h1>
+          <p className="blog-post-date">{post.frontmatter.date}</p>
+          <div className="blog-post-html" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+      </Layout>
     </div>
   )
 }
@@ -32,8 +37,9 @@ export const query = graphql`
         slug
       }
       frontmatter {
+        date(formatString: "YYYY. MM. DD")
         title
-        date(formatString: "DD MMM, YYYY")
+        tags
       }
     }
   }
