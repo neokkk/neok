@@ -3,19 +3,19 @@ import { graphql } from 'gatsby';
 
 import './blog-post.scss';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+// import Seo from '../components/Seo';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
 
   return (
     <div class="page post">
-      <Seo
+      {/* <Seo
         title={post.frontmatter.title}
         description={post.excerpt}
         keywords={post.frontmatter.title}
         pathname={post.fields.slug}
-      />
+      /> */}
 
       <Layout>
         <div className="blog-post">
