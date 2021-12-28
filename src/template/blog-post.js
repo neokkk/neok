@@ -5,16 +5,16 @@ import './blog-post.scss';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
-export default ({ data }) => {
+const Post = ({ data }) => {
   const post = data.markdownRemark;
   const {
     date,
     tags,
     title,
-  } = post;
+  } = post.frontmatter;
 
   return (
-    <div class="page post">
+    <div className="page post">
       <Seo
         title={title}
         description={post.excerpt}
@@ -31,7 +31,9 @@ export default ({ data }) => {
       </Layout>
     </div>
   )
-}
+};
+
+export default Post;
 
 export const query = graphql`
   query($slug: String!) {
