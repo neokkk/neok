@@ -53,6 +53,7 @@ export const Date = styled.p`
 export const Html = styled.div`
   font-family: ${({ theme }) => theme.font.spoqaHan};
   font-size: 0.95rem;
+  line-height: 1.6;
   width: 100%;
   padding: 60px 20px 20px;
   display: flex;
