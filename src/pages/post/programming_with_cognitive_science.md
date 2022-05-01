@@ -37,7 +37,7 @@ tags: ['programming', 'cognitive science']
 
 인간의 기술 습득 모델로 드라이퍼스 모델을 많이 사용한다. 초보자, 고급 입문자, 중급자, 숙련자, 전문가의 5단계로 표현되며, 중요한 것은 이 모델이 기술 별로 적용된다는 것이다. 모든 영역에서 전문가이거나 초보자인 사람은 없다. 각 단계의 세부적 특성이 있지만 크게 초보자와 전문가로만 나눠서 얘기해보자.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/98f94c02-9b82-44fe-91e3-a4efb09510da/Untitled.png)
+![드라이퍼스 5모델](https://images.squarespace-cdn.com/content/v1/55f92f56e4b02e1b84dd105a/1526626290316-6R6UAVCJNVWW71NCYZEM/Dreyfus.png?format=750w)
 
 초보자는 해당 기술 영역에서 사전 경험이 거의 없는 사람이다. 이들은 일을 해내기 위한 능력에 관심이 많다. 경험이 적기 때문에 자신의 행동이 어떤 결과를 가져올지 잘 모르고 뭔가를 배우고 싶어 하기보다는 당면 과제를 달성하고 싶어 한다. 실수에 어떻게 대응해야 할지 모르고 뭔가 잘못되면 혼란에 빠지기 쉽다. 그렇지만 상황에 관계없이 통하는 규칙이 있으면 효과적으로 일 할 수 있다. 물론 주어진 상황에 맞는 규칙이 뭔지 모르고, 예상치 못한 일이 발생할 때 대처 능력이 떨어진다. 규칙의 문제점은 모든 사항을 완벽하게 정의할 수 없다는 데 있는데, 규칙이 있으면 시작할 수는 있지만 더 앞으로 나갈 수는 없다.
 
@@ -60,7 +60,7 @@ tags: ['programming', 'cognitive science']
 
 인지 과정은 기억과 관련이 있다. 앞서, 인지는 정보를 얻고 이해하는 과정이라고 했다. 정보를 얻는 것에서부터 인지 과정이 시작된다. 눈, 코, 귀와 같은 감각 기관을 통해 입력된 정보는 여러 **기억 공간 요소**들을 통과해 기존의 지식들과 결합 혹은 충돌한 후 처리(물리)된다. 기억 공간들 중 특히 세 가지 요소에 집중할 것이다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c9bb1615-fcd2-4d0a-88d6-db83d6405fca/Untitled.png)
+![기억 공간](https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/3838/2019/01/08215403/LifespanDevelopment46.jpg)
 
 바로 장기 기억 공간(**LTM**, long-term memory), 단기 기억 공간(**STM**, short-term memory), 작업 기억 공간(working memory)이다. 이 세 기억 공간들은 코드를 작성, 분석하고 시스템을 설계하거나 문서화하는 모든 종류의 인지 활동에 영향을 준다.
 
@@ -68,7 +68,7 @@ LTM에 있는 기억은 아주 오랫동안 보관(하드 드라이브)된다. �
 
 STM은 들어온 정보를 LTM에 보내기 전, 잠시 보관하기 위해 사용되는 임시 저장 장소(캐시)다. 특정 정보를 잠시 저장했다가 문제를 해결하고 나면 그 내용을 LTM에 저장하거나 기억에서 지워버린다. STM은 크기에 제한이 있는데, 이 크기에 대한 추정치는 최대 12개를 넘지 않으며, 일반적으로 2~6개 정도라고 한다. 또한 기억하는 시간은 최대 30초를 넘지 않는다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b7756f82-d7dd-46ca-8e72-8ddf2cc884fb/Untitled.png)
+![STM](https://quizizz.com/media/resource/gs/quizizz-media/quizzes/bb92bd58-c97e-49d3-8f4f-27509d388797?w=600&h=600)
 
 LTM과 STM이 기억 장치라면 작업 기억 공간은 처리 장치(프로세서)라고 볼 수 있다. 생각, 아이디어, 해결책 같은 실제 사고 작용이 이곳에서 일어난다. 
 
@@ -97,8 +97,6 @@ const binaryCalculator = (num: number) => num.toString(2);
 
 작업 기억 공간을 특정한 문제에 적용된 STM이라고도 한다. 이 때문에 STM과 마찬가지로 공간에 제한(2~6개)이 있고 이 용량을 인지 부하(cognitive load)라고 한다. 너무 많은 요소가 있어 높은 인지 부하를 가질 때 작업 기억 공간은 **과부하**(overload) 상태가 된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f6dc881d-9675-49e9-863f-1850d5488ff2/Untitled.png)
-
 인지 부하에는 크게 내재적, 외재적, 본유적 부하가 있다.
 
 내재적(intrinsic) 인지 부하는 문제 그 자체가 갖는 특성 때문에 발생하는 인지 부하다. 해당 문제에 대한 해답을 모를 때 발생한다.
@@ -121,7 +119,7 @@ const binaryCalculator = (num: number) => num.toString(2);
 
 (장기) 기억은 크게 절차적(procedural)(암시적, implicit) 기억과 선언적(declarative)(명시적, explicit) 기억으로 구분할 수 있다. 운동 능력이나 의식하지 않고 발휘하는 기술에 대한 기억, 즉 직관을 암시적 기억이라고 하고, 명확하게 알고 있는(알고 있는지 아는) 기억을 선언적 기억이라고 한다. 선언적 기억은 다시 경험을 기반으로 한 일화적(episodic) 기억과, 개념, 사실에 대한 의미적(semantic) 기억으로 나눌 수 있다. 이 기억들은 모두 문제를 해결하는 데 사용되며 각자의 역할이 다르다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/34e95920-0aaa-40ae-b399-07ced0e54a11/Untitled.png)
+![LTM](https://www.sciencetimes.co.kr/wp-content/uploads/2018/11/n-brain-basedlearning.jpg)
 
 어떤 기술을 아무 생각 없이 할 수 있을 정도가 되면 자동화했다고 한다. **자동화**는 더 복잡한 문제를 해결할 수 있게 해 주는데, 기술을 자동화하기 위해서는 암시적 기억을 강화해야 한다. 암시적 기억을 통한 작업은 인지 부하를 거의 유발하지 않는다. 암시적 기억은 **반복**을 통해 생성되는데, 이는 앞서 전문가에 대해 이야기했던 것과 일치한다. 기술이 자동화된 전문가는 아무런 노력 없이 그 일을 수행할 수 있고, 그 기술을 쓴다고 해서 인지 부하가 증가하지도 않는다.
 
