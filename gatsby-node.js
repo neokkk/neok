@@ -16,6 +16,15 @@ const onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
+const onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: '@babel/plugin-transform-react-jsx',
+    options: {
+      runtime: 'automatic',
+    },
+  });
+};
+
 const onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
@@ -55,6 +64,7 @@ const createPages = async ({ graphql, actions }) => {
 
 module.exports = {
   onCreateNode,
+  onCreateBabelConfig,
   onCreateWebpackConfig,
   createPages,
 };
