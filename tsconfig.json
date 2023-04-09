@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "jsx": "preserve",
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
-    "baseUrl": ".",
+    "noImplicitAny": true,
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["static/*"]
     },
+    "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
+    "target": "esnext"
   },
-  "include": ["src/**/*"],
-  "exclude": ["public", ".cache"]
+  "include": ["src/**/*"]
 }

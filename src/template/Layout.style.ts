@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Container = styled.div`
   color: ${({ theme }) => theme.color.gray};
   font-family: ${({ theme }) => theme.font.montserrat};
   width: 80%;
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Content = styled.div`
+const Content = styled.main`
   width: 100%;
   padding: 20px;
   display: flex;
@@ -25,7 +25,13 @@ export const Content = styled.div`
   overflow: -moz-scrollbars-none; // firefox
   -ms-overflow-style: none; // IE +10
 
-  &::-webkit-scrollbar { // chrome, safari, opera
+  &::-webkit-scrollbar {
+    // chrome, safari, opera
     width: 0;
   }
 `;
+
+export default {
+  Container,
+  Content,
+};

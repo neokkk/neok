@@ -1,26 +1,23 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
-
-import Header from '../components/Header';
+import Style from './Layout.style';
+import Header from '@/components/Header';
 import { Global } from '@/styles/common';
 import media from '@/styles/media';
 import theme from '@/styles/theme';
-import { Wrapper, Content } from '@/styles/layout';
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }: PropsWithChildren<any>) => {
   return (
     <ThemeProvider theme={{ ...theme, ...media }}>
       <Global />
 
-      <Wrapper>
+      <Style.Container>
         <Header />
 
-        <Content>
-          {children}
-        </Content>
-      </Wrapper>
+        <Style.Content>{children}</Style.Content>
+      </Style.Container>
     </ThemeProvider>
   );
-}
+};
 
 export default Layout;

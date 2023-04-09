@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Container = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   padding: 20px;
 `;
 
-export const Logo = styled(Link)`
+const Logo = styled(Link)`
   color: ${({ theme }) => theme.color.gray};
   font-family: ${({ theme }) => theme.font.montserrat};
   font-size: 44px;
@@ -23,3 +23,8 @@ export const Logo = styled(Link)`
     color: ${({ theme }) => theme.color.orange};
   }
 `;
+
+export default {
+  Container,
+  Logo,
+};

@@ -4,11 +4,7 @@ class Frontmatter {
   title: string;
 
   constructor(frontmatter: Frontmatter) {
-    const {
-      date,
-      tags,
-      title,
-    } = frontmatter;
+    const { date, tags, title } = frontmatter;
 
     this.date = date;
     this.tags = tags;
@@ -25,12 +21,7 @@ export default class Post {
   frontmatter: Frontmatter;
 
   constructor(post: Post) {
-    const {
-      id,
-      excerpt,
-      fields,
-      frontmatter,
-    } = post;
+    const { id, excerpt, fields, frontmatter } = post;
 
     this.id = id;
     this.excerpt = excerpt;

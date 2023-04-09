@@ -11,7 +11,7 @@ const onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: 'slug',
-      value: slug
+      value: slug,
     });
   }
 };
@@ -39,13 +39,13 @@ const createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  allMarkdown.data?.allMarkdownRemark.nodes.forEach((node) => {
+  allMarkdown.data.allMarkdownRemark.nodes.forEach((node) => {
     const { slug } = node.fields;
     if (!slug) return;
 
     createPage({
       path: slug,
-      component: path.resolve('./src/template/blog-post.tsx'),
+      component: path.resolve('./src/template/Post.tsx'),
       context: {
         slug,
       },

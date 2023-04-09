@@ -1,14 +1,14 @@
 import { CSSObject, SimpleInterpolation, css } from 'styled-components';
-import { layout } from './theme';
+import theme from './theme';
 
 export default Object
-  .keys(layout)
+  .keys(theme.layout)
   .reduce(
     (media, size) => Object.assign(
       media,
       {
         [size]: (first: TemplateStringsArray | CSSObject, ...interpolations: SimpleInterpolation[]) => css`
-          @media (max-width: ${layout[size]}px) {
+          @media (max-width: ${theme.layout[size]}px) {
             ${css(first, ...interpolations)}
           }
         `,

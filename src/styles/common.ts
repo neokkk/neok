@@ -1,11 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { transition } from './theme';
+import theme from './theme';
 
 export const Global = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css?family=Montserrat:800&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
-  @import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
-
   *,
   body,
   html {
@@ -14,11 +10,22 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
   a {
-    transition: ${transition.hover};
+    transition: ${theme.transition.hover};
 
     &:hover {
-      transition: ${transition.hover};
+      transition: ${theme.transition.hover};
     }
   }
 `;

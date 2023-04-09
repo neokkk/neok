@@ -1,24 +1,12 @@
+import Style from './Header.style';
 import React from 'react';
-import { Logo, Wrapper } from '@/styles/components/Header';
 
 const Header: React.FC = () => {
-  // const data = useStaticQuery( // not in pages folder
-  //   graphql`
-  //     query {
-  //       site {
-  //         siteMetadata {
-  //           rights
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
-
   return (
-    <Wrapper>
-      <Logo to="/">neok</Logo>
-    </Wrapper>
+    <Style.Container>
+      <Style.Logo to="/">neok</Style.Logo>
+    </Style.Container>
   );
-}
+};
 
 export default Header;

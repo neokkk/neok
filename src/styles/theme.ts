@@ -21,13 +21,9 @@ const transition = {
   hover: 'all 0.2s ease-in-out',
 }
 
-const theme = {
+export const theme = {
   color,
   font,
-};
-
-export {
-  color,
   layout,
   transition,
 };

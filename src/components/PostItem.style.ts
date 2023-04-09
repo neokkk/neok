@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Container = styled.article`
   font-family: ${({ theme }) => theme.font.spoqaHan};
   margin: 1rem 0;
 
@@ -9,19 +9,19 @@ export const Wrapper = styled.div`
     text-decoration: none;
     position: relative;
     z-index: 1;
-  
+
     &:visited {
       color: inherit;
     }
   }
 `;
 
-export const Date = styled.p`
+const Date = styled.p`
   font-size: 0.8rem;
   opacity: 0.7;
 `;
 
-export const Title = styled.h1`
+const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   display: inline-block;
@@ -48,18 +48,24 @@ export const Title = styled.h1`
   }
 `;
 
-export const Tags = styled.ul`
+const Tags = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 0 4px;
 
-
   li {
     list-style: none;
     text-decoration: none;
     display: inline;
-    opacity: .8;
+    opacity: 0.8;
   }
 `;
+
+export default {
+  Container,
+  Date,
+  Tags,
+  Title,
+};

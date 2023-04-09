@@ -1,15 +1,41 @@
 {
-    "extends": ["eslint:recommended"],
-    "indent": [true, "spaces", 2],
-    "no-console": [true],
-    "rules": {
-      "quotemark": [true, "single", "jsx-double"],
-      "interface-name": [false],
-      "jsx-no-multiline-js": [false]
-    },
-    "rulesDirectory": [],
-    "semicolon": [
-      true,
-      "always"
-    ]
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "settings": {
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "\\?",
+          "^node:"
+        ]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc" },
+        "groups": [
+          ["builtin", "external"],
+          ["index", "internal", "parent", "sibling", "unknown"],
+          ["object"]
+        ]
+      }
+    ],
+    "import/resolver": {
+      "typescript": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  }
 }

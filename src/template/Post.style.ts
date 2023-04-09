@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+const Container = styled.article`
   color: ${({ theme }) => theme.color.gray};
   max-width: 700px;
   width: 100%;
@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Title = styled.h1`
+const Title = styled.h2`
   color: ${({ theme }) => theme.color.orange};
   font-family: ${({ theme }) => theme.font.spoqaHan};
   font-size: 2.2rem;
@@ -44,13 +44,13 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Date = styled.p`
+const Date = styled.p`
   font-family: ${({ theme }) => theme.font.spoqaHan};
   font-size: 0.8rem;
   opacity: 0.7;
 `;
 
-export const Html = styled.div`
+const Html = styled.div`
   font-family: ${({ theme }) => theme.font.spoqaHan};
   font-size: 0.95rem;
   line-height: 1.6;
@@ -62,12 +62,11 @@ export const Html = styled.div`
   a {
     color: ${({ theme }) => theme.color.orange};
     text-decoration: none;
-    
+
     &:hover {
       color: white;
       background-color: ${({ theme }) => theme.color.orange};
       padding: 0 4px;
-      border-radius: 4px;
     }
   }
 
@@ -81,6 +80,10 @@ export const Html = styled.div`
     padding-left: 18px;
   }
 
+  li {
+    list-style: disc;
+  }
+
   hr {
     color: ${({ theme }) => theme.color.gray}20;
   }
@@ -89,3 +92,10 @@ export const Html = styled.div`
     font-size: 0.9rem;
   `}
 `;
+
+export default {
+  Container,
+  Date,
+  Html,
+  Title,
+};

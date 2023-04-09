@@ -1,36 +1,35 @@
-import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-
-import Seo from '../components/Seo';
-import Post from '../components/Post';
-import Layout from '../template/layout';
-
-import PostInfo from '@/types/post';
+import React from 'react';
+import Seo from '@/components/Seo';
+import PostItem from '@/components/PostItem';
+import Layout from '@/template/Layout';
+import PostInfo from '@/schema/post';
 
 type IndexQuery = {
   allMarkdownRemark: {
-    nodes: PostInfo[],
-  },
+    nodes: PostInfo[];
+  };
 };
 
-const IndexPage: React.FC<PageProps<IndexQuery>> = ({ data }) => {
+const Index: React.FC<PageProps<IndexQuery>> = ({ data }) => {
   return (
     <React.Fragment>
       <Seo />
 
       <Layout>
-        <div style={{ margin: '20px 0' }}>
+        <ol style={{ margin: '20px 0' }}>
           {data.allMarkdownRemark.nodes.map((node) => (
-            <Post key={node.id} info={node} />
+            <li key={node.id}>
+              <PostItem info={node} />
+            </li>
           ))}
-        </div>
+        </ol>
       </Layout>
     </React.Fragment>
   );
 };
 
-export default IndexPage;
+export default Index;
 
 export const query = graphql`
   query {
