@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import React from 'react';
 import Style from './PostItem.style';
 import PostInfo from '@/schema/post';
 
@@ -7,7 +6,7 @@ type PostItemProps = {
   info: PostInfo;
 };
 
-const PostItem: React.FC<PostItemProps> = ({ info }) => {
+const PostItem = ({ info }: PostItemProps) => {
   const { date, tags, title } = info.frontmatter;
 
   return (
@@ -20,7 +19,7 @@ const PostItem: React.FC<PostItemProps> = ({ info }) => {
 
       <Style.Tags>
         {tags.map((tag) => (
-          <li>#{tag}</li>
+          <li key={tag}>#{tag}</li>
         ))}
       </Style.Tags>
     </Style.Container>

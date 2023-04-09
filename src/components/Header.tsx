@@ -1,7 +1,6 @@
 import Style from './Header.style';
-import React from 'react';
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <Style.Container>
       <Style.Logo to="/">neok</Style.Logo>

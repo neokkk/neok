@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import React from 'react';
 
 type SeoProps = {
   description?: string;
@@ -10,13 +9,13 @@ type SeoProps = {
   title?: string;
 };
 
-const Seo: React.FC<SeoProps> = ({
+const Seo = ({
   title,
   description,
   keywords,
   image,
   pathname,
-}) => (
+}: SeoProps) => (
   <StaticQuery
     query={query}
     render={({
@@ -27,7 +26,6 @@ const Seo: React.FC<SeoProps> = ({
           defaultKeywords,
           siteUrl,
           defaultImage,
-          twitterUsername,
         },
       },
     }) => {

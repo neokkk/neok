@@ -11,7 +11,7 @@ type IndexQuery = {
   };
 };
 
-const Index: React.FC<PageProps<IndexQuery>> = ({ data }) => {
+const Index = ({ data }: PageProps<IndexQuery>) => {
   return (
     <React.Fragment>
       <Seo />

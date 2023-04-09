@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { ReactElement } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Style from './Layout.style';
 import Header from '@/components/Header';
@@ -6,7 +6,7 @@ import { Global } from '@/styles/common';
 import media from '@/styles/media';
 import theme from '@/styles/theme';
 
-const Layout = ({ children }: PropsWithChildren<any>) => {
+const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <ThemeProvider theme={{ ...theme, ...media }}>
       <Global />

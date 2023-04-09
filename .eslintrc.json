@@ -7,10 +7,16 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript",
     "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "import/no-named-as-default": "off"
+  },
   "settings": {
     "import/no-unresolved": [
       "error",
@@ -36,6 +42,10 @@
       "typescript": {
         "project": ["./tsconfig.json"]
       }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "18"
     }
   }
 }
