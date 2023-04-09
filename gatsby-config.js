@@ -23,27 +23,37 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-sitemap',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        output: '/sitemap.xml',
-        excludes: ['/category/*', '/path/to/page'],
-        query: `
+        trackingId: 'G-ZYNEXYZ2BD',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-KWLRDP9',
+        routeChangeEventName: 'gatsby-route-change',
+      },
+    },
+    {
+      resolve: 'gatsby-omni-font-loader',
+      options: {
+        enableListener: true,
+        preconnect: ['https://fonts.googleapis.com'],
+        web: [
           {
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }  
-        }`,
-        serialize: ({ path }) => ({
-          url: path,
-        }),
+            name: 'Monserrat',
+            file: 'https://fonts.googleapis.com/css?family=Montserrat:800&display=swap',
+          },
+          {
+            name: 'Source Code Pro',
+            file: 'https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap',
+          },
+          {
+            name: 'Spoqa Han Sans',
+            file: '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css',
+          },
+        ],
       },
     },
     {
@@ -100,6 +110,30 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/sitemap.xml',
+        excludes: ['/category/*', '/path/to/page'],
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }  
+        }`,
+        serialize: ({ path }) => ({
+          url: path,
+        }),
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -130,27 +164,6 @@ module.exports = {
                 },
               ],
             },
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-omni-font-loader',
-      options: {
-        enableListener: true,
-        preconnect: ['https://fonts.googleapis.com'],
-        web: [
-          {
-            name: 'Monserrat',
-            file: 'https://fonts.googleapis.com/css?family=Montserrat:800&display=swap',
-          },
-          {
-            name: 'Source Code Pro',
-            file: 'https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap',
-          },
-          {
-            name: 'Spoqa Han Sans',
-            file: '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css',
           },
         ],
       },
