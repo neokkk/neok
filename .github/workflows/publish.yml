@@ -1,4 +1,4 @@
-name: Publish
+name: Publish on Netlify
 on:
   push:
     branches: [master]
