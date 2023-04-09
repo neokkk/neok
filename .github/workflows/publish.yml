@@ -14,4 +14,4 @@ jobs:
         env:
           NETLIFY_BUILD_TOKEN: ${{ secrets.BUILD_TOKEN }}
         run: |
-          curl -X POST -d '{}' https://api.netlify.com/build_hooks/$NETLIFY_BUILD_TOKEN
+          curl -X POST -d '{}' https://api.netlify.com/build_hooks/"$NETLIFY_BUILD_TOKEN"
