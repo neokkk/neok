@@ -1,5 +1,5 @@
 import { PageProps, graphql } from 'gatsby';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Layout from './Layout';
 import Style from './Post.style';
 import Seo from '@/components/Seo';
