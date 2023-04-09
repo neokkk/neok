@@ -5,7 +5,7 @@
   "license": "MIT",
   "version": "2.1.0",
   "scripts": {
-    "deploy": "npx netlify-cli deploy --p",
+    "build": "gatsby build npx netlify-cli deploy --p",
     "lint": "eslint --ext=\".js,.jsx,.ts,.tsx\" .",
     "lint:fix": "eslint --fix --ext=\".js,.jsx,.ts,.tsx\" .",
     "start": "gatsby develop"
