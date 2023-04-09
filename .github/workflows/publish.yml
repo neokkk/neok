@@ -1,14 +1,19 @@
-name: publish
+name: Publish
 on:
   push:
     branches: [master]
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    container:
-      image: node:18
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - run: npm run build 
+      - name: Checkout
+        uses: actions/checkout@v2.7.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Build and Deploy
+        run: npm run build && npm run deploy
